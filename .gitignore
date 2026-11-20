@@ -1,0 +1,30 @@
+# Raw / licensed material (never commit)
+Assignment_2/
+*.wav
+*.WAV
+*.flac
+*.sph
+*.zip
+
+# Data, caches, features, checkpoints
+assignment_2b_emotion/data/
+assignment_2b_emotion/checkpoints/
+assignment_2b_emotion/runs/
+assignment_2a_mfa/work/
+assignment_2a_mfa/corpus/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+
+# Env / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+kaggle.json
+*.log
