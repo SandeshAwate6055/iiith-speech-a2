@@ -92,3 +92,5 @@ Plan: [PLAN.md](PLAN.md) (approved 20 Nov 11:09). Deadline: 22 Nov 23:59 IST (ta
 - Preparing a local submission package for owner review only. Private GitHub backup/final push is authorized; actual submission and any visibility change are not.
 
 - Final permitted source/results/reports pushed privately as9e2b743; remote synchronized. Local owner-review package created: submission_ready/IIITH_Assignment2_2026-11-22_READY_FOR_REVIEW.zip, 15.34 MB, 56 entries, ZIP CRC passed; SHA256 b2d87c117ec327979c51058ae41a499ebb38349bb57c4cd4e4fdd399c0eef48f. No submission/email/public release performed.
+
+- Final packaging check included the executed .praat helper in Git. Owner-review bundle source snapshot 5dc752e3d40bb611a95065af8d867b6eee27218e; corrected final ZIP SHA256 3d9abb0ebdf6da7b812fd130f20ef422ccda7f1db6dd98a102d4ec9d690538c9. All56 entries remain CRC-valid. The earlier package hash above is superseded by this metadata-corrected bundle.
