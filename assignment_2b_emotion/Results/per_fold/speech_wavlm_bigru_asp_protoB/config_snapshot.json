@@ -1,0 +1,35 @@
+{
+ "mode": "speech",
+ "protocol": "B",
+ "cfg": {
+  "name": "speech_wavlm_bigru_asp",
+  "data": {
+   "meta": "data/metadata.csv",
+   "splits_dir": "splits",
+   "features_dir": "data/features",
+   "ssl_tag": "wavlm_base_plus"
+  },
+  "model": {
+   "num_layers": 13,
+   "in_dim": 768,
+   "proj_dim": 256,
+   "temporal_arch": "gru",
+   "temporal_hidden": 128,
+   "temporal_layers": 1,
+   "pooling": "asp",
+   "head_hidden": 256,
+   "dropout": 0.3,
+   "spec_mask_prob": 0.3,
+   "num_classes": 7
+  },
+  "train": {
+   "seed": 42,
+   "batch_size": 32,
+   "epochs": 40,
+   "patience": 8,
+   "lr": 0.001,
+   "weight_decay": 0.01,
+   "label_smoothing": 0.1
+  }
+ }
+}

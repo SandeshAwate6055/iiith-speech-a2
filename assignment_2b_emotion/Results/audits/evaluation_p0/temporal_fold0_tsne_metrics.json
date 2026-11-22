@@ -1,0 +1,9 @@
+{
+ "Temporal": {
+  "fold": 0,
+  "n": 560,
+  "silhouette_emotion": 0.4857395589351654,
+  "silhouette_speaker": 0.017247529700398445,
+  "correspondence": "legacy runner split order; row identity inferred, not independently proven"
+ }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "status": "UNRELIABLE_PROVENANCE_UNTIL_RECONCILED",
+  "discovered": "2026-11-20 12:08 IST",
+  "previous_agent_queue_pid": 10420,
+  "previous_agent_owner_pid": 26864,
+  "our_queue_pid": 17664,
+  "action": "Stopped only our duplicate queue and its verified p0_train processes. Previous agent queue untouched.",
+  "affected_runs": ["text_roberta_top2ft_protoA", "text_roberta_top2ft_protoB", "text_roberta_top2ft_protoC"],
+  "warning": "Previous legacy runner overwrote shared text checkpoints/results after p0 completion markers were written. p0_provenance.json, fold completion markers and embedding IDs do not prove correspondence to current checkpoint bytes. Do not resume these runs through p0_train or make reproducibility claims from those markers. Wait for previous queue to finish, then validate fresh predictions against final checkpoints in a separately named verification output."
+}

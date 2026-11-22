@@ -1,0 +1,29 @@
+{
+ "mode": "text",
+ "protocol": "A",
+ "cfg": {
+  "name": "text_roberta_top2ft",
+  "data": {
+   "meta": "data/metadata.csv",
+   "splits_dir": "splits"
+  },
+  "model": {
+   "model_name": "FacebookAI/roberta-base",
+   "n_finetune_layers": 2,
+   "proj_dim": 256,
+   "head_hidden": 256,
+   "dropout": 0.3,
+   "num_classes": 7
+  },
+  "train": {
+   "seed": 42,
+   "batch_size": 32,
+   "epochs": 20,
+   "patience": 6,
+   "lr": 0.001,
+   "encoder_lr": 2e-05,
+   "weight_decay": 0.01,
+   "label_smoothing": 0.1
+  }
+ }
+}

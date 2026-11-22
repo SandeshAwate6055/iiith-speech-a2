@@ -1,0 +1,5 @@
+pair,n_boundaries,mean_ms,median_ms,p90_ms,pct_le_20ms,pct_le_50ms
+english_us_arpa vs adapted_arpa,476,0.08,0.0,0.0,100.0,100.0
+english_us_arpa vs ctc,476,36.69,29.79,70.04,33.2,75.4
+english_us_arpa vs english_mfa,330,30.41,10.0,20.0,86.7,94.5
+english_us_arpa vs isle_probe,476,0.08,0.0,0.0,100.0,100.0

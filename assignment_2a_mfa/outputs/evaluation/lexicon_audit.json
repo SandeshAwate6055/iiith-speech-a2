@@ -1,0 +1,59 @@
+{
+  "dictionary": "D:\\IIITH A2\\assignment_2a_mfa\\dictionaries\\custom_lexicon.dict",
+  "corpus": "D:\\IIITH A2\\assignment_2a_mfa\\corpus",
+  "files": 6,
+  "dictionary_words": 145,
+  "invalid_entries": [],
+  "oov_types": 0,
+  "oovs": {},
+  "coverage": [
+    {
+      "file": "F2BJRLP1",
+      "tokens": 68,
+      "oov_types": []
+    },
+    {
+      "file": "F2BJRLP2",
+      "tokens": 73,
+      "oov_types": []
+    },
+    {
+      "file": "F2BJRLP3",
+      "tokens": 82,
+      "oov_types": []
+    },
+    {
+      "file": "ISLE_SESS0131_BLOCKD02_01_sprt1",
+      "tokens": 5,
+      "oov_types": []
+    },
+    {
+      "file": "ISLE_SESS0131_BLOCKD02_02_sprt1",
+      "tokens": 5,
+      "oov_types": []
+    },
+    {
+      "file": "ISLE_SESS0131_BLOCKD02_03_sprt1",
+      "tokens": 5,
+      "oov_types": []
+    }
+  ],
+  "passed": true,
+  "limitation": "ARPAbet syntax and coverage only; pronunciation accuracy and acoustic compatibility require MFA validation and listening.",
+  "base_oovs": [
+    "de-politicize",
+    "dukakis",
+    "hennessy",
+    "hennessy's",
+    "judgeships",
+    "maffy",
+    "mandatory",
+    "margo",
+    "melnicove",
+    "sjc's",
+    "wbur's"
+  ],
+  "acoustic_phones_compatible": true,
+  "model_revision": "9c8d5d8e1dd5d9cf188a5571203de0e09ca6bede",
+  "license_note": "Base pronunciations/model: MontrealCorpusTools english_us_arpa, CC BY 4.0; corpus-scoped derivatives with G2P and manual candidates. No claim of human gold verification."
+}

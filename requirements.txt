@@ -1,0 +1,3 @@
+# Install matching torch==2.5.1 and torchaudio==2.5.1 separately; see README.
+-r assignment_2b_emotion/requirements.txt
+-r assignment_2a_mfa/requirements.txt

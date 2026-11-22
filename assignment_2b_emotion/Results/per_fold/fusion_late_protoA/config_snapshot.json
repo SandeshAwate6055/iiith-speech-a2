@@ -1,0 +1,44 @@
+{
+ "mode": "fusion",
+ "protocol": "A",
+ "cfg": {
+  "name": "fusion_late",
+  "data": {
+   "meta": "data/metadata.csv",
+   "splits_dir": "splits",
+   "features_dir": "data/features",
+   "ssl_tag": "wavlm_base_plus"
+  },
+  "model": {
+   "fusion_type": "late",
+   "fusion_dim": 256,
+   "num_classes": 7,
+   "dropout": 0.3,
+   "modality_dropout": 0.0,
+   "speech_cfg": {
+    "num_layers": 13,
+    "in_dim": 768,
+    "proj_dim": 256,
+    "temporal_arch": "gru",
+    "temporal_hidden": 128,
+    "temporal_layers": 1,
+    "pooling": "asp",
+    "spec_mask_prob": 0.3
+   },
+   "text_cfg": {
+    "model_name": "roberta-base",
+    "n_finetune_layers": 0,
+    "proj_dim": 256
+   }
+  },
+  "train": {
+   "seed": 42,
+   "batch_size": 32,
+   "epochs": 40,
+   "patience": 8,
+   "lr": 0.001,
+   "weight_decay": 0.01,
+   "label_smoothing": 0.1
+  }
+ }
+}

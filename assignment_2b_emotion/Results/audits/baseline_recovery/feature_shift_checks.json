@@ -1,0 +1,82 @@
+{
+  "feature_rechecks": [
+    {
+      "utt_id": "OAF_back_angry",
+      "sample_rate": 16000,
+      "max_abs_feature_error": 4.648437516152626e-05,
+      "peak": 0.891265869140625
+    },
+    {
+      "utt_id": "OAF_youth_surprise",
+      "sample_rate": 16000,
+      "max_abs_feature_error": 4.374999980427674e-05,
+      "peak": 0.891265869140625
+    },
+    {
+      "utt_id": "YAF_back_angry",
+      "sample_rate": 16000,
+      "max_abs_feature_error": 3.476562505966285e-05,
+      "peak": 0.8912353515625
+    },
+    {
+      "utt_id": "YAF_youth_surprise",
+      "sample_rate": 16000,
+      "max_abs_feature_error": 4.0234375092040864e-05,
+      "peak": 0.891265869140625
+    }
+  ],
+  "speaker_shift": [
+    {
+      "fold": 0,
+      "train_speaker": "OAF",
+      "test_speaker": "YAF",
+      "gamma": 0.011363636363636364,
+      "median_nearest_train_squared_distance": 179.40245426662008,
+      "median_max_rbf_similarity": 0.13021246159124672,
+      "fraction_max_rbf_similarity_below_001": 0.18928571428571428,
+      "fraction_test_feature_values_outside_train_range": 0.08494318181818182
+    },
+    {
+      "fold": 1,
+      "train_speaker": "YAF",
+      "test_speaker": "OAF",
+      "gamma": 0.011363636363636364,
+      "median_nearest_train_squared_distance": 213.0396577215503,
+      "median_max_rbf_similarity": 0.08884153783469932,
+      "fraction_max_rbf_similarity_below_001": 0.3142857142857143,
+      "fraction_test_feature_values_outside_train_range": 0.04107142857142857
+    }
+  ],
+  "aggregation_checks": [
+    {
+      "protocol": "A",
+      "modality": "speech",
+      "mean_and_population_std_valid": true
+    },
+    {
+      "protocol": "A",
+      "modality": "text",
+      "mean_and_population_std_valid": true
+    },
+    {
+      "protocol": "B",
+      "modality": "speech",
+      "mean_and_population_std_valid": true
+    },
+    {
+      "protocol": "B",
+      "modality": "text",
+      "mean_and_population_std_valid": true
+    },
+    {
+      "protocol": "C",
+      "modality": "speech",
+      "mean_and_population_std_valid": true
+    },
+    {
+      "protocol": "C",
+      "modality": "text",
+      "mean_and_population_std_valid": true
+    }
+  ]
+}

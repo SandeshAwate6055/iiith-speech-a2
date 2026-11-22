@@ -1,0 +1,247 @@
+{
+ "model": "TFIDF+LogReg",
+ "modality": "text",
+ "protocol": "B",
+ "accuracy_mean": 0.1429,
+ "accuracy_std": 0.0,
+ "uar_mean": 0.1429,
+ "uar_std": 0.0,
+ "macro_f1_mean": 0.0357,
+ "macro_f1_std": 0.0,
+ "folds": [
+  {
+   "accuracy": 0.14286,
+   "uar": 0.14286,
+   "macro_precision": 0.02041,
+   "macro_recall": 0.14286,
+   "macro_f1": 0.03571,
+   "per_class": {
+    "angry": {
+     "precision": 0.1429,
+     "recall": 1.0,
+     "f1": 0.25,
+     "support": 40
+    },
+    "disgust": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "fear": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "happy": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "neutral": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "sad": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "surprise": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    }
+   },
+   "confusion_matrix": [
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "fold": 0
+  },
+  {
+   "accuracy": 0.14286,
+   "uar": 0.14286,
+   "macro_precision": 0.02041,
+   "macro_recall": 0.14286,
+   "macro_f1": 0.03571,
+   "per_class": {
+    "angry": {
+     "precision": 0.1429,
+     "recall": 1.0,
+     "f1": 0.25,
+     "support": 40
+    },
+    "disgust": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "fear": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "happy": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "neutral": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "sad": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "surprise": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    }
+   },
+   "confusion_matrix": [
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     40,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "fold": 1
+  }
+ ]
+}

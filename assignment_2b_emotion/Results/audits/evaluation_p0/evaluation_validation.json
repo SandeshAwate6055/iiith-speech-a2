@@ -1,0 +1,3811 @@
+{
+  "classical_speech_protoA": {
+    "model": "eGeMAPS+SVM",
+    "modality": "speech",
+    "protocol": "A",
+    "accuracy_mean": 0.9842860000000002,
+    "accuracy_std": 0.005805241080265284,
+    "uar_mean": 0.9842860000000002,
+    "uar_std": 0.005805241080265284,
+    "macro_f1_mean": 0.9843219999999999,
+    "macro_f1_std": 0.005788282646865142,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.97857,
+        "uar": 0.97857,
+        "macro_precision": 0.979,
+        "macro_recall": 0.97857,
+        "macro_f1": 0.97863,
+        "per_class": {
+          "angry": {
+            "precision": 0.975,
+            "recall": 0.975,
+            "f1": 0.975,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.9873,
+            "recall": 0.975,
+            "f1": 0.9811,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.9398,
+            "recall": 0.975,
+            "f1": 0.9571,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9625,
+            "f1": 0.9809,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.9756,
+            "recall": 1.0,
+            "f1": 0.9877,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9753,
+            "recall": 0.9875,
+            "f1": 0.9814,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            78,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            78,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            78,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2,
+            78,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            77,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.97857,
+        "uar": 0.97857,
+        "macro_precision": 0.97953,
+        "macro_recall": 0.97857,
+        "macro_f1": 0.97864,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9733,
+            "recall": 0.9125,
+            "f1": 0.9419,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.9753,
+            "recall": 0.9875,
+            "f1": 0.9814,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.908,
+            "recall": 0.9875,
+            "f1": 0.9461,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            79,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            78,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            73,
+            1,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            79,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.98929,
+        "uar": 0.98929,
+        "macro_precision": 0.98942,
+        "macro_recall": 0.98929,
+        "macro_f1": 0.98931,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.9875,
+            "recall": 0.9875,
+            "f1": 0.9875,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9873,
+            "recall": 0.975,
+            "f1": 0.9811,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.9877,
+            "recall": 1.0,
+            "f1": 0.9938,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9634,
+            "recall": 0.9875,
+            "f1": 0.9753,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            79,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            79,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            79,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            78,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.98214,
+        "uar": 0.98214,
+        "macro_precision": 0.98227,
+        "macro_recall": 0.98214,
+        "macro_f1": 0.98215,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.9877,
+            "recall": 1.0,
+            "f1": 0.9938,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.9756,
+            "recall": 1.0,
+            "f1": 0.9877,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9506,
+            "recall": 0.9625,
+            "f1": 0.9565,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.962,
+            "recall": 0.95,
+            "f1": 0.956,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            79,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            77,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            79,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            79,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            3,
+            0,
+            0,
+            76
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.99286,
+        "uar": 0.99286,
+        "macro_precision": 0.99307,
+        "macro_recall": 0.99286,
+        "macro_f1": 0.99288,
+        "per_class": {
+          "angry": {
+            "precision": 0.9877,
+            "recall": 1.0,
+            "f1": 0.9938,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9639,
+            "recall": 1.0,
+            "f1": 0.9816,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            79,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            78,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            79,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80
+          ]
+        ]
+      }
+    ],
+    "n_folds": 5,
+    "source_sha256": {
+      "summary.json": "adfcdca4319f85a853f8efbfdd8dbf399164c02d4f5bddc34d4e5380d071c0c4",
+      "predictions.csv": "16497845f21a31a5d42eca8a61fc5d35fc457110162578745634bbe142917cc9"
+    },
+    "embedding_validation": "absent"
+  },
+  "classical_speech_protoB": {
+    "model": "eGeMAPS+SVM",
+    "modality": "speech",
+    "protocol": "B",
+    "accuracy_mean": 0.18036,
+    "accuracy_std": 0.01607,
+    "uar_mean": 0.18036,
+    "uar_std": 0.01607,
+    "macro_f1_mean": 0.12448,
+    "macro_f1_std": 0.007089999999999999,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.19643,
+        "uar": 0.19643,
+        "macro_precision": 0.35955,
+        "macro_recall": 0.19643,
+        "macro_f1": 0.13157,
+        "per_class": {
+          "angry": {
+            "precision": 0.1835,
+            "recall": 1.0,
+            "f1": 0.3101,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 0.3333,
+            "recall": 0.15,
+            "f1": 0.2069,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.1,
+            "f1": 0.1818,
+            "support": 40
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 0.125,
+            "f1": 0.2222,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            6,
+            0,
+            1,
+            0,
+            0,
+            9
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            34,
+            2,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            1,
+            10,
+            1,
+            15,
+            0,
+            5,
+            8
+          ],
+          [
+            39,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.16429,
+        "uar": 0.16429,
+        "macro_precision": 0.2418,
+        "macro_recall": 0.16429,
+        "macro_f1": 0.11739,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.075,
+            "f1": 0.1395,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.1158,
+            "recall": 0.55,
+            "f1": 0.1913,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 0.3529,
+            "recall": 0.15,
+            "f1": 0.2105,
+            "support": 40
+          },
+          "sad": {
+            "precision": 0.2239,
+            "recall": 0.375,
+            "f1": 0.2804,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            38,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            3,
+            22,
+            0,
+            5,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            22,
+            0,
+            0,
+            18,
+            0
+          ],
+          [
+            0,
+            0,
+            27,
+            0,
+            0,
+            10,
+            3
+          ],
+          [
+            0,
+            0,
+            34,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            19,
+            0,
+            6,
+            15,
+            0
+          ],
+          [
+            0,
+            0,
+            28,
+            0,
+            0,
+            12,
+            0
+          ]
+        ]
+      }
+    ],
+    "n_folds": 2,
+    "source_sha256": {
+      "summary.json": "b91e5dec2a21999a7f3f98dfe91c5110c7d42c50d3ecfa8030fae8e405659bc8",
+      "predictions.csv": "0da489524634be6cfdac09ead04cc1314ff3bde0ac8ff206fe0116dd1f6a7abd"
+    },
+    "embedding_validation": "absent"
+  },
+  "classical_speech_protoC": {
+    "model": "eGeMAPS+SVM",
+    "modality": "speech",
+    "protocol": "C",
+    "accuracy_mean": 0.985356,
+    "accuracy_std": 0.004973009551569337,
+    "uar_mean": 0.985356,
+    "uar_std": 0.004973009551569337,
+    "macro_f1_mean": 0.985464,
+    "macro_f1_std": 0.004919254415051132,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.99464,
+        "uar": 0.99464,
+        "macro_precision": 0.99464,
+        "macro_recall": 0.99464,
+        "macro_f1": 0.99463,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.9877,
+            "recall": 1.0,
+            "f1": 0.9938,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9873,
+            "recall": 0.975,
+            "f1": 0.9811,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9875,
+            "recall": 0.9875,
+            "f1": 0.9875,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            78,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.98393,
+        "uar": 0.98393,
+        "macro_precision": 0.9846,
+        "macro_recall": 0.98393,
+        "macro_f1": 0.98402,
+        "per_class": {
+          "angry": {
+            "precision": 0.9756,
+            "recall": 1.0,
+            "f1": 0.9877,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.9625,
+            "f1": 0.9809,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9872,
+            "recall": 0.9625,
+            "f1": 0.9747,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9294,
+            "recall": 0.9875,
+            "f1": 0.9576,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            77,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            77,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            78,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.98214,
+        "uar": 0.98214,
+        "macro_precision": 0.98261,
+        "macro_recall": 0.98214,
+        "macro_f1": 0.98223,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.963,
+            "recall": 0.975,
+            "f1": 0.9689,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9875,
+            "recall": 0.9875,
+            "f1": 0.9875,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9625,
+            "f1": 0.9809,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.9873,
+            "recall": 0.975,
+            "f1": 0.9811,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9405,
+            "recall": 0.9875,
+            "f1": 0.9634,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            78,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            79,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            79,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            77,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            78,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.98571,
+        "uar": 0.98571,
+        "macro_precision": 0.98656,
+        "macro_recall": 0.98571,
+        "macro_f1": 0.9859,
+        "per_class": {
+          "angry": {
+            "precision": 0.9873,
+            "recall": 0.975,
+            "f1": 0.9811,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9186,
+            "recall": 0.9875,
+            "f1": 0.9518,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            78,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            78,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            79,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            79,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            78
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.98036,
+        "uar": 0.98036,
+        "macro_precision": 0.98123,
+        "macro_recall": 0.98036,
+        "macro_f1": 0.98054,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 0.9625,
+            "f1": 0.9809,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.975,
+            "f1": 0.9873,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9625,
+            "recall": 0.9625,
+            "f1": 0.9625,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.9875,
+            "recall": 0.9875,
+            "f1": 0.9875,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.9186,
+            "recall": 0.9875,
+            "f1": 0.9518,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            77,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            78,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            79,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            77,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            79,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      }
+    ],
+    "n_folds": 5,
+    "source_sha256": {
+      "summary.json": "47b0c4162705575ea727e118af850c8a9e2630c039d1e8d50cc9e5a44ecb9ccf",
+      "predictions.csv": "c8a02317d86e45a2298d0e11327e3fe1c0743ce15b8dcf595d0993a3db341669"
+    },
+    "embedding_validation": "absent"
+  },
+  "classical_text_protoA": {
+    "model": "TFIDF+LogReg",
+    "modality": "text",
+    "protocol": "A",
+    "accuracy_mean": 0.14286,
+    "accuracy_std": 0.0,
+    "uar_mean": 0.14286,
+    "uar_std": 0.0,
+    "macro_f1_mean": 0.03571,
+    "macro_f1_std": 0.0,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "n_folds": 5,
+    "source_sha256": {
+      "summary.json": "32bacc1b79d4af269b1219559fc604eb6ec7ed7216dbe5f29b0bf6951a2cf5a8",
+      "predictions.csv": "6c07edb47a060f39b20aae4aeb119e9b89cbf9457dc444c0c92ebac08a5ec590"
+    },
+    "embedding_validation": "absent"
+  },
+  "classical_text_protoB": {
+    "model": "TFIDF+LogReg",
+    "modality": "text",
+    "protocol": "B",
+    "accuracy_mean": 0.14286,
+    "accuracy_std": 0.0,
+    "uar_mean": 0.14286,
+    "uar_std": 0.0,
+    "macro_f1_mean": 0.03571,
+    "macro_f1_std": 0.0,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.14286,
+        "uar": 0.14286,
+        "macro_precision": 0.02041,
+        "macro_recall": 0.14286,
+        "macro_f1": 0.03571,
+        "per_class": {
+          "angry": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "n_folds": 2,
+    "source_sha256": {
+      "summary.json": "1937f41ef14d73e1b92f139e7eec13b37d4a1cfa9a7a0f78fee9c54fe2b15e5c",
+      "predictions.csv": "c07e343f23d0d574f3e0ee6c180c49c4a780b9146a36234a727422fa5180a8e2"
+    },
+    "embedding_validation": "absent"
+  },
+  "classical_text_protoC": {
+    "model": "TFIDF+LogReg",
+    "modality": "text",
+    "protocol": "C",
+    "accuracy_mean": 0.0,
+    "accuracy_std": 0.0,
+    "uar_mean": 0.0,
+    "uar_std": 0.0,
+    "macro_f1_mean": 0.0,
+    "macro_f1_std": 0.0,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.0,
+        "uar": 0.0,
+        "macro_precision": 0.0,
+        "macro_recall": 0.0,
+        "macro_f1": 0.0,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            2,
+            49,
+            2,
+            0,
+            17,
+            10
+          ],
+          [
+            51,
+            0,
+            20,
+            3,
+            0,
+            4,
+            2
+          ],
+          [
+            49,
+            2,
+            0,
+            2,
+            0,
+            17,
+            10
+          ],
+          [
+            54,
+            1,
+            18,
+            0,
+            0,
+            2,
+            5
+          ],
+          [
+            48,
+            0,
+            18,
+            2,
+            0,
+            8,
+            4
+          ],
+          [
+            48,
+            2,
+            18,
+            2,
+            0,
+            0,
+            10
+          ],
+          [
+            51,
+            2,
+            20,
+            2,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.0,
+        "uar": 0.0,
+        "macro_precision": 0.0,
+        "macro_recall": 0.0,
+        "macro_f1": 0.0,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            11,
+            1,
+            53,
+            0,
+            15
+          ],
+          [
+            13,
+            0,
+            1,
+            2,
+            49,
+            0,
+            15
+          ],
+          [
+            15,
+            0,
+            0,
+            1,
+            50,
+            0,
+            14
+          ],
+          [
+            15,
+            0,
+            5,
+            0,
+            50,
+            0,
+            10
+          ],
+          [
+            42,
+            0,
+            10,
+            1,
+            0,
+            0,
+            27
+          ],
+          [
+            11,
+            0,
+            4,
+            1,
+            54,
+            0,
+            10
+          ],
+          [
+            21,
+            0,
+            10,
+            1,
+            48,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.0,
+        "uar": 0.0,
+        "macro_precision": 0.0,
+        "macro_recall": 0.0,
+        "macro_f1": 0.0,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            10,
+            0,
+            0,
+            0,
+            18,
+            52
+          ],
+          [
+            0,
+            0,
+            4,
+            4,
+            0,
+            25,
+            47
+          ],
+          [
+            0,
+            5,
+            0,
+            4,
+            0,
+            16,
+            55
+          ],
+          [
+            0,
+            5,
+            1,
+            0,
+            0,
+            20,
+            54
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            0,
+            20,
+            52
+          ],
+          [
+            0,
+            22,
+            4,
+            4,
+            0,
+            0,
+            50
+          ],
+          [
+            0,
+            22,
+            5,
+            4,
+            0,
+            49,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.0,
+        "uar": 0.0,
+        "macro_precision": 0.0,
+        "macro_recall": 0.0,
+        "macro_f1": 0.0,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            3,
+            13,
+            0,
+            52,
+            2,
+            10
+          ],
+          [
+            44,
+            0,
+            3,
+            0,
+            28,
+            2,
+            3
+          ],
+          [
+            45,
+            2,
+            0,
+            0,
+            23,
+            2,
+            8
+          ],
+          [
+            56,
+            1,
+            5,
+            0,
+            13,
+            1,
+            4
+          ],
+          [
+            52,
+            2,
+            14,
+            0,
+            0,
+            2,
+            10
+          ],
+          [
+            51,
+            2,
+            3,
+            0,
+            22,
+            0,
+            2
+          ],
+          [
+            50,
+            2,
+            8,
+            0,
+            18,
+            2,
+            0
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.0,
+        "uar": 0.0,
+        "macro_precision": 0.0,
+        "macro_recall": 0.0,
+        "macro_f1": 0.0,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            21,
+            0,
+            7,
+            2,
+            48,
+            2
+          ],
+          [
+            50,
+            0,
+            0,
+            8,
+            2,
+            18,
+            2
+          ],
+          [
+            48,
+            9,
+            0,
+            5,
+            1,
+            15,
+            2
+          ],
+          [
+            48,
+            11,
+            0,
+            0,
+            2,
+            17,
+            2
+          ],
+          [
+            47,
+            9,
+            0,
+            6,
+            0,
+            16,
+            2
+          ],
+          [
+            47,
+            21,
+            0,
+            8,
+            2,
+            0,
+            2
+          ],
+          [
+            50,
+            12,
+            0,
+            4,
+            1,
+            13,
+            0
+          ]
+        ]
+      }
+    ],
+    "n_folds": 5,
+    "source_sha256": {
+      "summary.json": "5119eaa3b1fd8a038fe85dac9e595010ee773f1d0582b9c3e4a1ee23a68c47ed",
+      "predictions.csv": "a85f2735964c6528eca007be5fba5f95d9e6ab984e2bbbcac3ea159fe96218a4"
+    },
+    "embedding_validation": "absent"
+  },
+  "speech_wavlm_bigru_asp_protoA": {
+    "model": "speech_wavlm_bigru_asp",
+    "modality": "speech",
+    "protocol": "A",
+    "accuracy_mean": 0.999642,
+    "accuracy_std": 0.0007159999999999834,
+    "uar_mean": 0.999642,
+    "uar_std": 0.0007159999999999834,
+    "macro_f1_mean": 0.999642,
+    "macro_f1_std": 0.0007159999999999834,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.99821,
+        "uar": 0.99821,
+        "macro_precision": 0.99824,
+        "macro_recall": 0.99821,
+        "macro_f1": 0.99821,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 0.9877,
+            "recall": 1.0,
+            "f1": 0.9938,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 0.9875,
+            "f1": 0.9937,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            79
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 1.0,
+        "uar": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "accuracy": 1.0,
+        "uar": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "accuracy": 1.0,
+        "uar": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "accuracy": 1.0,
+        "uar": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "angry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "happy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 80
+          }
+        },
+        "confusion_matrix": [
+          [
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80
+          ]
+        ]
+      }
+    ],
+    "layer_weights_mean": [
+      0.0833,
+      0.0801,
+      0.0807,
+      0.0814,
+      0.0811,
+      0.079,
+      0.0763,
+      0.0758,
+      0.0738,
+      0.0725,
+      0.0719,
+      0.0721,
+      0.0721
+    ],
+    "n_folds": 5,
+    "source_sha256": {
+      "summary.json": "cb5a1fadf41c44b128fdb5b5a93086d54a567499a8c1060e88494e08d1f47171",
+      "predictions.csv": "f5b76399d704bb8ef548eac8fc2572619dab5528cab53fa8eddf6b1d9a725384"
+    },
+    "embedding_validation": "legacy runner split order; row identity inferred, not independently proven"
+  },
+  "speech_wavlm_bigru_asp_protoB": {
+    "model": "speech_wavlm_bigru_asp",
+    "modality": "speech",
+    "protocol": "B",
+    "accuracy_mean": 0.607145,
+    "accuracy_std": 0.08214499999999997,
+    "uar_mean": 0.607145,
+    "uar_std": 0.08214499999999997,
+    "macro_f1_mean": 0.562345,
+    "macro_f1_std": 0.075295,
+    "folds": [
+      {
+        "fold": 0,
+        "accuracy": 0.525,
+        "uar": 0.525,
+        "macro_precision": 0.52666,
+        "macro_recall": 0.525,
+        "macro_f1": 0.48705,
+        "per_class": {
+          "angry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 1.0,
+            "recall": 0.425,
+            "f1": 0.5965,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.3604,
+            "recall": 1.0,
+            "f1": 0.5298,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1": 0.9744,
+            "support": 40
+          },
+          "sad": {
+            "precision": 0.7674,
+            "recall": 0.825,
+            "f1": 0.7952,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.5588,
+            "recall": 0.475,
+            "f1": 0.5135,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            40,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            17,
+            0,
+            0,
+            0,
+            8,
+            15
+          ],
+          [
+            0,
+            0,
+            40,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            37,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            38,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            7,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            21,
+            0,
+            0,
+            0,
+            19
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.68929,
+        "uar": 0.68929,
+        "macro_precision": 0.64536,
+        "macro_recall": 0.68929,
+        "macro_f1": 0.63764,
+        "per_class": {
+          "angry": {
+            "precision": 0.5075,
+            "recall": 0.85,
+            "f1": 0.6355,
+            "support": 40
+          },
+          "disgust": {
+            "precision": 0.8182,
+            "recall": 0.9,
+            "f1": 0.8571,
+            "support": 40
+          },
+          "fear": {
+            "precision": 0.8889,
+            "recall": 1.0,
+            "f1": 0.9412,
+            "support": 40
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          "neutral": {
+            "precision": 0.8235,
+            "recall": 0.35,
+            "f1": 0.4912,
+            "support": 40
+          },
+          "sad": {
+            "precision": 1.0,
+            "recall": 0.85,
+            "f1": 0.9189,
+            "support": 40
+          },
+          "surprise": {
+            "precision": 0.4795,
+            "recall": 0.875,
+            "f1": 0.6195,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            34,
+            1,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            40,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            38
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            14,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0,
+            3,
+            34,
+            0
+          ],
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            35
+          ]
+        ]
+      }
+    ],
+    "layer_weights_mean": [
+      0.0806,
+      0.0795,
+      0.0793,
+      0.0795,
+      0.0795,
+      0.0785,
+      0.0764,
+      0.076,
+      0.0746,
+      0.074,
+      0.0737,
+      0.0741,
+      0.0743
+    ],
+    "n_folds": 2,
+    "source_sha256": {
+      "summary.json": "b4fdbbc65389c5993f7a18147e3ac4a6adf091796381e20a225930346c4f566f",
+      "predictions.csv": "c1581c0bd163accb7a186f5c35b3c014e4fec0836a94fc5991f5d8679cd70df5"
+    },
+    "embedding_validation": "legacy runner split order; row identity inferred, not independently proven"
+  }
+}

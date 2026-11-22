@@ -1,0 +1,270 @@
+{
+ "model": "fusion_gated_xattn",
+ "modality": "fusion",
+ "protocol": "B",
+ "accuracy_mean": 0.5214,
+ "accuracy_std": 0.0536,
+ "uar_mean": 0.5214,
+ "uar_std": 0.0536,
+ "macro_f1_mean": 0.464,
+ "macro_f1_std": 0.0144,
+ "folds": [
+  {
+   "accuracy": 0.46786,
+   "uar": 0.46786,
+   "macro_precision": 0.47201,
+   "macro_recall": 0.46786,
+   "macro_f1": 0.44956,
+   "per_class": {
+    "angry": {
+     "precision": 0.0833,
+     "recall": 0.075,
+     "f1": 0.0789,
+     "support": 40
+    },
+    "disgust": {
+     "precision": 0.7647,
+     "recall": 0.325,
+     "f1": 0.4561,
+     "support": 40
+    },
+    "fear": {
+     "precision": 0.4,
+     "recall": 0.45,
+     "f1": 0.4235,
+     "support": 40
+    },
+    "happy": {
+     "precision": 0.0556,
+     "recall": 0.05,
+     "f1": 0.0526,
+     "support": 40
+    },
+    "neutral": {
+     "precision": 0.6349,
+     "recall": 1.0,
+     "f1": 0.7767,
+     "support": 40
+    },
+    "sad": {
+     "precision": 0.7941,
+     "recall": 0.675,
+     "f1": 0.7297,
+     "support": 40
+    },
+    "surprise": {
+     "precision": 0.5714,
+     "recall": 0.7,
+     "f1": 0.6292,
+     "support": 40
+    }
+   },
+   "confusion_matrix": [
+    [
+     3,
+     3,
+     15,
+     3,
+     11,
+     2,
+     3
+    ],
+    [
+     0,
+     13,
+     0,
+     4,
+     0,
+     5,
+     18
+    ],
+    [
+     5,
+     1,
+     18,
+     15,
+     1,
+     0,
+     0
+    ],
+    [
+     28,
+     0,
+     10,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     40,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     2,
+     0,
+     11,
+     27,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     12,
+     0,
+     0,
+     28
+    ]
+   ],
+   "loss": 1.53168,
+   "gate_mean": 0.4966,
+   "gate_std": 0.0515,
+   "fold": 0
+  },
+  {
+   "accuracy": 0.575,
+   "uar": 0.575,
+   "macro_precision": 0.48624,
+   "macro_recall": 0.575,
+   "macro_f1": 0.47841,
+   "per_class": {
+    "angry": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "disgust": {
+     "precision": 0.8511,
+     "recall": 1.0,
+     "f1": 0.9195,
+     "support": 40
+    },
+    "fear": {
+     "precision": 0.5,
+     "recall": 1.0,
+     "f1": 0.6667,
+     "support": 40
+    },
+    "happy": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 40
+    },
+    "neutral": {
+     "precision": 0.5789,
+     "recall": 0.825,
+     "f1": 0.6804,
+     "support": 40
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 0.3,
+     "f1": 0.4615,
+     "support": 40
+    },
+    "surprise": {
+     "precision": 0.4737,
+     "recall": 0.9,
+     "f1": 0.6207,
+     "support": 40
+    }
+   },
+   "confusion_matrix": [
+    [
+     0,
+     0,
+     40,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     40,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     40,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     40
+    ],
+    [
+     7,
+     0,
+     0,
+     0,
+     33,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     0,
+     0,
+     24,
+     12,
+     0
+    ],
+    [
+     0,
+     4,
+     0,
+     0,
+     0,
+     0,
+     36
+    ]
+   ],
+   "loss": 1.44941,
+   "gate_mean": 0.5151,
+   "gate_std": 0.0094,
+   "fold": 1
+  }
+ ],
+ "gate_mean": 0.5059,
+ "gate_std": 0.0304,
+ "layer_weights_mean": [
+  0.0825,
+  0.0794,
+  0.0801,
+  0.0809,
+  0.08,
+  0.0791,
+  0.0771,
+  0.0769,
+  0.0741,
+  0.0732,
+  0.0722,
+  0.0719,
+  0.0726
+ ]
+}

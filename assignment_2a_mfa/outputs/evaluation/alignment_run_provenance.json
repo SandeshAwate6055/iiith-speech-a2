@@ -1,0 +1,35 @@
+{
+  "model_repo": "MontrealCorpusTools/english_us_arpa",
+  "model_revision": "9c8d5d8e1dd5d9cf188a5571203de0e09ca6bede",
+  "mfa_version": "3.4.4",
+  "acoustic_version": "3.3.0",
+  "beam": 100,
+  "retry_beam": 400,
+  "uses_speaker_adaptation": true,
+  "input_sha256": {
+    "corpus/f2b/F2BJRLP1.lab": "248c39ed161c5bc30275fcfff096b6c922c81fe38d737aff0d906629c98c19b9",
+    "corpus/f2b/F2BJRLP2.lab": "1a53daebea34f03c30942b8ec10bb0b2f041676c92a134647821eaca0d245bb5",
+    "corpus/f2b/F2BJRLP3.lab": "ccfa88e681fc38bebb8d008442674cbd155dd6998ba65f8a0eb41017cd998d55",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_01_sprt1.lab": "b88ee5880348dd94ba269c3d951791cb8b17238a7354bcc1062fc536be7d2ef8",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_02_sprt1.lab": "233e243e49e2380ea571e25f480c21c8850ecf22eac6b427d3feeb41db0215ae",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_03_sprt1.lab": "51659f2c70d7989cf2823cedcee895d7f985b06d7cf3368e38732175b2038062",
+    "corpus/f2b/F2BJRLP1.wav": "3acac479198ed26ea7f7a11d953c496046e2be58d3290197b77aa1ed89da9351",
+    "corpus/f2b/F2BJRLP2.wav": "e5d80d6668767ea6473f1eee590026c39c2483984f40aac9133a16c45d5c40ab",
+    "corpus/f2b/F2BJRLP3.wav": "2f418c0f17a136c4e3054ff941b9bff52b3123a1ef8849a4c0df778aa223eb49",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_01_sprt1.wav": "06e851d9e4bf96b82777a0cc24b1e4e3060e426f102deba9a92ea2c9ec7c45bb",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_02_sprt1.wav": "043bb05909ee8b974d299bb24ac14076d1e6269501fc69ee5997d56cb4cdee84",
+    "corpus/isle_sess0131/ISLE_SESS0131_BLOCKD02_03_sprt1.wav": "b0f831a484943da8d821d71b731de892ca37e8fd484cdd27a4e1890af0271012",
+    "dictionaries/custom_lexicon.dict": "82721c20ed8b63faee93c84659db574161d5647cf3584052b202e6ac58de66ca",
+    "configs/pipeline.yaml": "89640be15bff0b89ed88f11f185c56165e3f37845ed1431f29ee04fbe3649fa7",
+    "work/models/hf_arpa.zip": "e18384993e708c193c95347b1ec78c97e8b15cbcfb1106740e212e58f1ac2d64"
+  },
+  "textgrid_sha256": {
+    "outputs/textgrids/english_us_arpa/f2b/F2BJRLP1.TextGrid": "7b24e0ac721fc2c463a975f43e8c06435453fc1edbea333617af8e7e60912103",
+    "outputs/textgrids/english_us_arpa/f2b/F2BJRLP2.TextGrid": "79eb7992e0d3a636eff82f634a9aa8a9095ccda1b2efe1c79d5c7db63ec1d455",
+    "outputs/textgrids/english_us_arpa/f2b/F2BJRLP3.TextGrid": "f39849fb610c420aa6d128ff2caa546c807e3d4bf2d9a65b26b9b625d89557f6",
+    "outputs/textgrids/english_us_arpa/isle_sess0131/ISLE_SESS0131_BLOCKD02_01_sprt1.TextGrid": "6a5534b7a383b2996efd6b83d9a18e2cd8d94f0a2387ef8a30c4143ce631b5ea",
+    "outputs/textgrids/english_us_arpa/isle_sess0131/ISLE_SESS0131_BLOCKD02_02_sprt1.TextGrid": "b42544635794374965e5d1e9450455c91a54a2ea04c0c618e64f0b362ec71ad8",
+    "outputs/textgrids/english_us_arpa/isle_sess0131/ISLE_SESS0131_BLOCKD02_03_sprt1.TextGrid": "7ce16d43f7437ac5ce1057908884f0a03259bf5749f52f7769c8b5bf8b670a56"
+  },
+  "note": "Recorded after successful MFA alignment/strict validity checks in this continuation; no manual boundary gold or completed Praat inspection."
+}
