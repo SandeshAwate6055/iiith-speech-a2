@@ -56,7 +56,9 @@ Percentages are unweighted fold means ± population standard deviations. [Full p
 
 ## Results at a glance
 
-![Accuracy and macro-F1 across protocols](assignment_2b_emotion/Results/plots/model_comparison_protocols.png)
+![Macro-F1 comparison across Protocols A, B and C](assignment_2b_emotion/Results/plots/model_comparison_protocols.png)
+
+*Model comparison across Protocols A/B/C — Macro-F1 (%) with population standard deviation.*
 
 ![Temporal, contextual and fusion representations: within-fold UMAP](assignment_2b_emotion/Results/plots/embeddings_umap_protoA.png)
 

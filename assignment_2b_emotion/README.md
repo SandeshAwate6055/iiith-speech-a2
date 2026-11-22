@@ -22,7 +22,9 @@ Six model families are evaluated under three fixed protocols. Entries are accura
 | speech_wavlm_bigru_asp | 99.96 / 99.96 | 60.71 / 56.23 | 99.86 / 99.86 |
 | text_roberta_top2ft | 14.29 / 3.57 | 14.29 / 6.31 | 14.25 / 4.34 |
 
-![Model comparison across three protocols](Results/plots/model_comparison_protocols.png)
+![Macro-F1 comparison across Protocols A, B and C](Results/plots/model_comparison_protocols.png)
+
+*Model comparison across Protocols A/B/C — Macro-F1 (%) with population standard deviation.*
 
 ## Architecture and technical design
 
