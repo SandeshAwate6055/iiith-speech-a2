@@ -64,15 +64,19 @@ The embedding panels use Protocol A fold 0, not pooled cross-fold coordinates. [
 
 ## Architecture · Assignment 2A
 
-![ARCH 2A: forced alignment](docs/figures/ARCH_2A.png)
+![Updated Assignment 2A architecture: MFA forced alignment](docs/figures/ARCH_2A.png)
+
+These supplied infographics are used for README display; the PDF reports retain their existing architecture figures.
 
 The final architecture shows **lowercase** transcript normalization, custom dictionary/G2P handling and parallel alignment alternatives. CTC produces **word-only** alignments; the primary MFA path supplies words and phones. [Technical details](assignment_2a_mfa/README.md#architecture-and-technical-design).
 
 ## Architecture · Assignment 2B
 
-![ARCH 2B: speech, text and multimodal fusion](docs/figures/ARCH_2B.png)
+![Updated Assignment 2B architecture: speech, text and fusion](docs/figures/ARCH_2B.png)
 
 The final architecture traces all five functional blocks. Gated cross-attention operates on projected speech **frame** and text **token** sequences before pooling. Concatenation uses pooled embeddings and was evaluated under all three protocols. [Dimensions and implementation](assignment_2b_emotion/README.md#architecture-and-technical-design).
+
+**Implementation detail:** the infographic's `concat(512 + 256) -> 768` label describes the unprojected pooled branch dimensions. The implemented concatenation path first projects each branch to 256 dimensions, concatenates to 512, then projects to 256. Gated cross-attention and concatenation are separate alternatives, not sequential fusion stages. SpecAugment runs on learned acoustic features during training.
 
 ## The two assignments
 
@@ -85,22 +89,77 @@ The final reports provide clickable contents, PDF bookmarks and page numbering: 
 
 ## Reproducibility and repository structure
 
+Key tracked paths are shown below; individual output files and split manifests are grouped by directory.
+
 ```text
-README.md
-Combined_Report.pdf
-assignment_2a_mfa/
-  README.md
-  report/report_2a.pdf
-  scripts/  configs/  dictionaries/  tests/  outputs/
-assignment_2b_emotion/
-  README.md
-  report/report_2b.pdf
-  models/  src/mer/  configs/  splits/  tests/  Results/
-docs/figures/
-  ARCH_2A.png
-  ARCH_2B.png
-  ... existing report-reproduction schematics
+iiith-speech-a2/
+|-- README.md
+|-- Combined_Report.pdf
+|-- requirements.txt
+|-- .gitignore
+|-- assignment_2a_mfa/
+|   |-- README.md
+|   |-- report/
+|   |   `-- report_2a.pdf
+|   |-- requirements.txt
+|   |-- run_pipeline.ps1
+|   |-- configs/
+|   |-- dictionaries/
+|   |-- scripts/
+|   |-- tests/
+|   `-- outputs/
+|       |-- textgrids/
+|       |-- figures/
+|       |-- praat_screenshots/
+|       `-- evaluation/
+|-- assignment_2b_emotion/
+|   |-- README.md
+|   |-- report/
+|   |   `-- report_2b.pdf
+|   |-- models/
+|   |   |-- speech_pipeline/
+|   |   |   |-- train.py
+|   |   |   `-- test.py
+|   |   |-- text_pipeline/
+|   |   |   |-- train.py
+|   |   |   `-- test.py
+|   |   `-- fusion_pipeline/
+|   |       |-- train.py
+|   |       `-- test.py
+|   |-- src/
+|   |   `-- mer/
+|   |       |-- data/
+|   |       |-- features/
+|   |       |-- models/
+|   |       |-- training/
+|   |       |-- evaluation/
+|   |       `-- utils/
+|   |-- configs/
+|   |-- splits/
+|   |-- Results/
+|   |   |-- accuracy_tables.csv
+|   |   |-- accuracy_tables.md
+|   |   |-- comparative_analysis.md
+|   |   |-- failure_cases.md
+|   |   |-- per_fold/
+|   |   |-- plots/
+|   |   `-- verified_p0/
+|   |-- tests/
+|   |-- requirements.txt
+|   |-- requirements-lock-windows.txt
+|   `-- environment_versions.json
+|-- docs/
+|   `-- figures/
+|       |-- ARCH_2A.png
+|       `-- ARCH_2B.png
+`-- tools/
 ```
+
+- `assignment_2a_mfa/` contains corpus preparation, dictionary/G2P and MFA scripts; `outputs/` holds TextGrids, alignment figures, genuine Praat captures and evaluation evidence.
+- `assignment_2b_emotion/` contains the required speech/text/fusion train-test entry points, shared `src/mer/` implementation, fixed splits, configurations and dependency records. `Results/` holds verified metrics, per-fold evaluations, plots and failure analysis.
+- `docs/figures/` holds README architecture images and existing technical schematics. `tools/` contains report, diagram and evaluation utilities.
+- The root combined PDF and component `report/` PDFs are the existing final reports. Raw/licensed datasets, feature caches and large checkpoints are not tracked.
+
 
 <details>
 <summary>Setup, commands and evaluation evidence</summary>

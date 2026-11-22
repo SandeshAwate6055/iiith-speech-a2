@@ -26,7 +26,11 @@ Six model families are evaluated under three fixed protocols. Entries are accura
 
 ## Architecture and technical design
 
-![ARCH 2B](../docs/figures/ARCH_2B.png)
+![Updated Assignment 2B architecture: speech, text and fusion](../docs/figures/ARCH_2B.png)
+
+These supplied infographics are used for README display; the PDF reports retain their existing architecture figures.
+
+**Implementation detail:** the infographic's `concat(512 + 256) -> 768` label describes the unprojected pooled branch dimensions. The implemented concatenation path first projects each branch to 256 dimensions, concatenates to 512, then projects to 256. Gated cross-attention and concatenation are separate alternatives, not sequential fusion stages. SpecAugment runs on learned acoustic features during training.
 
 The five functional blocks are preprocessing, feature extraction, temporal/contextual modelling, fusion and classification. Speech is represented by frame sequences and ASP embeddings; text by contextual token sequences and a pooled embedding. Each required pipeline has separate train/test entry points.
 

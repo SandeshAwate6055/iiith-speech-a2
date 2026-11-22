@@ -29,7 +29,9 @@ Six recordings total 97.163 seconds. All 145 corpus word types are covered by th
 
 ## Architecture and technical design
 
-![ARCH 2A](../docs/figures/ARCH_2A.png)
+![Updated Assignment 2A architecture: MFA forced alignment](../docs/figures/ARCH_2A.png)
+
+These supplied infographics are used for README display; the PDF reports retain their existing architecture figures.
 
 The implementation decodes SPHERE/RIFF audio to 16 kHz mono PCM16, groups speakers, normalizes transcripts, constructs an audited G2P-backed lexicon and runs MFA GMM-HMM alignment with speaker adaptation. Word/phone tiers feed structural checks, cross-system comparisons and Praat inspection.
 
