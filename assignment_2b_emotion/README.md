@@ -1,10 +1,20 @@
-# 2B: TESS speech, text and fusion
+# Assignment 2B: Multimodal Emotion Recognition (Speech, Text & Fusion)
 
-Run from `assignment_2b_emotion` with the root Python 3.10 environment and matching torch/torchaudio 2.5.1. PowerShell: `$env:PYTHONPATH = (Resolve-Path src).Path`; bash: `export PYTHONPATH="$PWD/src"`. Check GPU with `python -c "import torch; print(torch.cuda.is_available())"`. Keep this repository PRIVATE; no audio, features, caches, checkpoints or secrets in Git.
+This directory contains the speech, text, and multimodal fusion pipelines, frozen evaluation splits, verified results, visualizations, and final report for **Assignment 2B** on the Toronto Emotional Speech Set (TESS).
 
-## Local preparation
+Run commands from `assignment_2b_emotion/` using the root Python 3.10 virtual environment (`torch==2.5.1`, `torchaudio==2.5.1`). Set `PYTHONPATH` to include `src`:
 
-The following is for an authorized new local preparation, not required for cached-feature Colab:
+```powershell
+# PowerShell
+$env:PYTHONPATH = (Resolve-Path src).Path
+
+# Bash
+export PYTHONPATH="$PWD/src"
+```
+
+## 1. Dataset & Split Protocols
+
+Download and prepare TESS (2,800 clips, 7 emotions × 400 clips, 200 target words, 2 female speakers OAF and YAF; Borealis DOI `10.5683/SP2/E8H2MF`):
 
 ```powershell
 python -m mer.data.download_tess --out data/raw/TESS
@@ -15,79 +25,68 @@ python -m mer.features.extract_egemaps --meta data/metadata.csv --out data/featu
 python -m mer.features.extract_ssl --meta data/metadata.csv --model microsoft/wavlm-base-plus --tag wavlm_base_plus --out data/features --batch_size 8
 ```
 
-Preprocessing updates processed paths in metadata; local extraction requires the waveforms. Cached text/fusion training only requires metadata columns `utt_id, emotion_id, transcript, speaker, word`, frozen splits and (fusion) trusted tensors `data/features/wavlm_base_plus/<utt_id>.pt` shaped `[13, time, 768]`. Audit 2800 unique clips, 400 per class, 200 words, two speakers and finite exact-ID cache coverage. Preparation handles filename `OA_bite_neutral`. Never load untrusted tensors/checkpoints.
+All models are evaluated on three frozen, leakage-tested split protocols in [`splits/`](splits/):
 
-Use frozen `splits/protocol_{A,B,C}.json` unchanged. For a genuinely new dataset only: `python -m mer.data.make_splits --meta data/metadata.csv --out <new-splits-directory> --seed 42`. Do not replace benchmark splits.
+| Protocol | Split Design | Purpose |
+|---|---|---|
+| **A** | 5-fold word-disjoint CV (128 train / 32 val / 40 test words; both speakers) | Primary lexical-generalization benchmark |
+| **B** | 2-fold speaker-transfer (LOSO) + word-disjoint (40 held-out test words on unseen speaker) | Strict cross-speaker & lexical stress test |
+| **C** | 5-fold random stratified CV (~70% train / 10% val / 20% test; shared words & speakers) | Optimistic in-distribution reference |
 
-| Protocol | Evaluation |
-|---|---|
-| A | Primary: five word-disjoint folds, 128/32/40 train/validation/test words, both speakers |
-| B | Two speaker-transfer folds, also word-disjoint; test uses 40 held-out words on the other speaker |
-| C | Optimistic random stratified five-fold reference, about 70/10/20% train/validation/test, shared words/speakers |
+## 2. Pipeline Architectures
 
-Two speakers cannot establish broad speaker generalization.
+1. **Speech Pipeline (`configs/speech.yaml`)**:
+   - **Preprocessing**: 16 kHz mono conversion, 30 dB silence trimming with 50 ms padding, -1 dBFS peak normalization.
+   - **Features**: Frozen `microsoft/wavlm-base-plus` (`[13, T, 768]`) with a learnable softmax layer-importance weighted sum.
+   - **Temporal Modelling & Classifier**: 256-d projection → 2-layer BiGRU (128 hidden/dir) → Attentive Statistics Pooling (mean + std) → MLP classifier.
+2. **Text Pipeline (`configs/text.yaml`)**:
+   - **Preprocessing & Features**: Standardized carrier transcript (`"Say the word <target>"`, emotion/speaker suffixes stripped) tokenized via `FacebookAI/roberta-base` (max length 32).
+   - **Contextual Modelling & Classifier**: Top-2 RoBERTa transformer layers fine-tuned → 256-d projection → masked attention pooling → MLP classifier.
+3. **Multimodal Fusion Pipelines (`configs/fusion_concat.yaml`, `configs/fusion.yaml`)**:
+   - **Concat Fusion**: Concatenates pooled 256-d speech and 256-d text representations → MLP classifier.
+   - **Gated Cross-Attention Fusion**: Bidirectional 4-head cross-modal attention between temporal speech and token-level text streams + learned sigmoid vector gate (`256-d`) → MLP classifier.
 
-## Training and testing
+## 3. Training & Testing Entry Points
 
-Speech: learned WavLM layer sum, temporal BiGRU, attentive statistics pooling. Text uses canonical pretrained ID `FacebookAI/roberta-base`; the canonical snapshot is cached locally. Fusion provides concat and gated cross attention. Hugging Face weights/tokenizers must be available from an authorized cache or downloaded; local caches are not automatically present in Colab.
-
-The P0 runner uses matching provenance and completed-fold markers. Its interface is:
-
-```powershell
-python -m mer.training.p0_train --mode text --config configs/text.yaml --protocol A
-python -m mer.training.p0_train --mode fusion --config configs/fusion_concat.yaml --protocol A
-python -m mer.training.p0_train --mode fusion --config configs/fusion.yaml --protocol A
-```
-
-Repeat for B/C only when GPU ownership permits. Check `python -m mer.training.p0_train --help`. Completed folds with matching provenance are skipped. Interrupted folds restart deterministically from their initial seed; there is no optimizer/epoch resume. Existing legacy checkpoints are not adopted. The runner locks each run and refuses changed inputs/code/config. The notebook additionally hashes every feature cache. Partial evaluation artifacts require a new attempt ID. The older shared trainer is not resume-safe.
-
-The six assignment entry points are also available:
+The six required deliverable scripts under [`models/`](models/) run training and evaluation across Protocols `A`, `B`, and `C`:
 
 ```powershell
+# 1. Speech Pipeline
 python models/speech_pipeline/train.py --config configs/speech.yaml --protocol A
 python models/speech_pipeline/test.py --config configs/speech.yaml --protocol A
+
+# 2. Text Pipeline
 python models/text_pipeline/train.py --config configs/text.yaml --protocol A
 python models/text_pipeline/test.py --config configs/text.yaml --protocol A
+
+# 3. Multimodal Fusion Pipeline (Gated Cross-Attention or Concat)
 python models/fusion_pipeline/train.py --config configs/fusion.yaml --protocol A
 python models/fusion_pipeline/test.py --config configs/fusion.yaml --protocol A
+python models/fusion_pipeline/train.py --config configs/fusion_concat.yaml --protocol A
+python models/fusion_pipeline/test.py --config configs/fusion_concat.yaml --protocol A
 ```
 
-Legacy training overwrites existing fold checkpoints. Use unique `--name` values matched between train/test, or copied configs with external private `ckpt_dir`/`out_dir`; preserve active/original runs. Legacy test requires every protocol fold checkpoint. Default run name: `<config name>_proto<protocol>`. Test writes `summary.json`, `predictions.csv`, `embeddings.npy` under `Results/per_fold/<run>`; training saves best checkpoints and validation history. Embeddings represent the temporal/contextual/fusion block. JSON metrics are fractions; tables show percentages and population standard deviation across folds.
+*(Note: When running fresh training experiments, pass `--name <new_run_name>` to avoid overwriting existing benchmark runs. Deterministic lock-safe training is also available via `python -m mer.training.p0_train --mode <text|fusion> --config <cfg> --protocol <A|B|C>`.)*
 
-Classical commands: `python -m mer.models.classical --modality speech --protocol A` and similarly `--modality text`. These overwrite default outputs; preserve originals. After completed tests: `python -m mer.evaluation.aggregate_results` and `python -m mer.evaluation.plots`. Failure-case plots need local audio. The final checkpoint-linked neural results, aggregate comparison and reports are complete; use the verified final recovery workflow below. Optional interrupted runs are excluded, not assigned zero scores.
-
-## Audit interpretation
-
-`python -m mer.evaluation.audit_baselines` and `python -m mer.evaluation.audit_feature_shift` write independent recovery audits under `Results/audits/baseline_recovery/`. They require existing metadata, eGeMAPS and saved baseline artifacts; feature reproduction also needs processed audio. Preserve original baseline rows.
-
-Classical baselines fit **train+validation**, while neural models fit train and select checkpoints with validation. They have different fitting budgets. Train-only/direct-SVM audit comparisons are separate experiments, not replacements for original E1 rows. Legacy SVM uses probability argmax, which can differ from direct SVM prediction. Low cross-speaker RBF similarity is consistent with feature shift, not proof of its sole cause; do not tune on test data.
-
-Every full-corpus transcript occurs with seven emotions, so text has no intrinsic label information and balanced population chance is 1/7. This does **not** imply chance for every dependent finite partition. Saved classical text Protocol C is 0% in every fold: each held-out true label is below its transcript's training-complement majority under train+validation fitting. This complementary-imbalance artifact can induce systematic below-chance prediction. It is not evidence of emotion understanding or grounds to change frozen splits. The recovery log records a near-zero train-only check too. This audit interpretation supersedes PLAN.md's assertion of chance under any split; neural performance must be measured separately.
-
-## Private Colab
-
-Open [notebooks/P0_colab.ipynb](notebooks/P0_colab.ipynb), select a GPU, provide a private-repo read token through hidden input and configure private Drive paths. No embedded secrets, public repository or raw/2A audio is needed. Use a revision containing the final P0 runner and canonical configs. Jobs are text, concat fusion and gated fusion across A/B/C. Outputs go to Drive outside Git, with provenance and input/config fingerprints. Completed jobs are skipped; interrupted jobs rely on the P0 runner's resume contract. Do not use two sessions for the same RUN_ID. Clear outputs before sharing. Live Colab execution remains unvalidated.
-
-
-## Verified final recovery (22 November)
-
-The canonical submission artifacts are `Results/accuracy_tables.{csv,md}`, `Results/plots/`, `Results/failure_cases.md`, `Results/comparative_analysis.md`, and `report/report_2b.pdf`. They are generated from the separate `Results/verified_p0/` outputs. Original `Results/per_fold/` files and all checkpoints are preserved. Verification JSON files bind final checkpoint bytes to re-evaluated predictions; historical text-training provenance was not reconstructed.
-
-From the repository root, use `python tools/complete_model_verification.py` to verify existing weights and `python tools/finalize_evaluation.py` to rebuild tables/figures. Build the report with a Python containing the report dependencies:
+Classical baselines (`eGeMAPS+SVM` and `TF-IDF+LR`):
 
 ```powershell
-python tools/build_reports.py --final --verification-root assignment_2b_emotion/Results/verified_p0
+python -m mer.models.classical --modality speech --protocol A
+python -m mer.models.classical --modality text --protocol A
 ```
 
-All 12 speech/text/concat/gated headline combinations across A/B/C are available. Interrupted late fusion is optional and excluded. Gated C lacks historical epoch curves; final checkpoint inference is verified and no curve was invented. Per-class confusion/recall, five actual failures, paired help/harm counts and fold-0 t-SNE/UMAP for temporal/contextual/fused blocks are included. Do not interpret projected separation as independent predictive evidence.
+## 4. Verified Results & Deliverables
 
-The component requirements now match the actual installed versions; `environment_versions.json` and `requirements-lock-windows.txt` record the evaluated Windows environment. The latter is platform-specific, not a Colab lockfile. No dependencies were upgraded during recovery.
+All 12 neural headline configurations were independently re-evaluated from saved checkpoints into [`Results/verified_p0/`](Results/verified_p0/) with SHA256 checkpoint-to-prediction verification records (`verification.json`).
 
-For a fresh training reproduction, prepare data/features first, then use a NEW experiment name to avoid the intentionally blocked historical text markers, for example:
+- **Consolidated Accuracy Tables**: [`Results/accuracy_tables.md`](Results/accuracy_tables.md) and [`Results/accuracy_tables.csv`](Results/accuracy_tables.csv)
+- **Per-Emotion & Help/Harm Comparative Analysis**: [`Results/comparative_analysis.md`](Results/comparative_analysis.md) and [`Results/per_emotion_validated.csv`](Results/per_emotion_validated.csv)
+- **Failure Case Analysis (5 Prediction-Backed Cases)**: [`Results/failure_cases.md`](Results/failure_cases.md), [`Results/failure_cases.csv`](Results/failure_cases.csv), and [`Results/plots/failure_cases.png`](Results/plots/failure_cases.png)
+- **Embedding Separability (Temporal, Contextual, Fusion)**: Within-fold UMAP ([`Results/plots/embeddings_umap_protoA.png`](Results/plots/embeddings_umap_protoA.png)) and t-SNE ([`Results/plots/embeddings_tsne_protoA.png`](Results/plots/embeddings_tsne_protoA.png))
+- **Final PDF Report**: [`report/report_2b.pdf`](report/report_2b.pdf) (6 pages)
 
-```powershell
-python models/text_pipeline/train.py --config configs/text.yaml --protocol A --name reproduce_text_A
-python models/text_pipeline/test.py --config configs/text.yaml --protocol A --name reproduce_text_A
-```
-
-Use the analogous speech/fusion entry points and frozen split manifests. These commands were not rerun during recovery: the existing completed models were reused. Full training reproduction requires the documented datasets/features and suitable compute; checkpoint inference was reproduced locally.
+### Key Scientific Notes & Limitations
+1. **Uninformative Text & Complementary Imbalance**: Every TESS target word occurs exactly once per emotion per speaker (full-corpus chance = $1/7 \approx 14.29\%$). Under random stratified splits without word disjointness (Protocol C), each held-out sample's true emotion appears one fewer time for that word in the training complement, causing classical train+val `TF-IDF+LR` to predict the complement majority and achieve `0.00%` accuracy.
+2. **Classical vs. Neural Fitting Budget**: Classical baselines fit `train+val`, whereas neural models fit `train` only and use `val` for early stopping.
+3. **Cross-Speaker Generalization (Protocol B)**: With only two female speakers, Protocol B is a 2-speaker transfer stress test rather than a population estimate. Speech achieves `60.71%` accuracy (`56.23%` Macro-F1), with `100%` fear recall but `0%` happiness recall due to cross-speaker pitch/arousal shift.
+4. **Provenance Disclosure**: Historical text-training lineage experienced a multi-process file collision; invalidated P0 completion markers are not used. All reported metrics in [`Results/`](Results/) and [`report/report_2b.pdf`](report/report_2b.pdf) are derived from independent checkpoint re-evaluation in [`Results/verified_p0/`](Results/verified_p0/).

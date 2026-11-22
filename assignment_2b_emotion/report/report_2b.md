@@ -6,7 +6,7 @@
 
 Four headline systems (speech, text, concat fusion, gated fusion) under A/B/C require 12 complete validated runs. Ongoing/partial jobs are pending, never completed results. Final checkpoint-to-prediction correspondence is checked by independent re-evaluation and before/after hashes. Historical text-training lineage was affected by concurrent writers; invalidated P0 markers are not adopted.
 
-Metadata: 2800 clips; 2800 unique IDs; 200 words; 2 speakers. Class counts {'0': 400, '1': 400, '2': 400, '3': 400, '4': 400, '5': 400, '6': 400}. TESS uses two female speakers and seven acted emotions; filename-derived text is Say the word <target> after stripping speaker/emotion suffixes. Source [B6]: Borealis DOI 10.5683/SP2/E8H2MF. Keep data and repository private; retain source license/attribution.
+Metadata: 2800 clips; 2800 unique IDs; 200 words; 2 speakers. Class counts {'0': 400, '1': 400, '2': 400, '3': 400, '4': 400, '5': 400, '6': 400}. TESS uses two female speakers and seven acted emotions; filename-derived text is Say the word <target> after stripping speaker/emotion suffixes. Source [B6]: Borealis DOI 10.5683/SP2/E8H2MF. Raw audio is excluded from Git; retain source license/attribution.
 
 | Protocol | Frozen split | Interpretation |
 |---|---|---|
@@ -45,7 +45,7 @@ Neural models fit training IDs and select best validation macro-F1 checkpoints. 
 
 Training settings are read from the current configuration files in the table. Implemented optimizer is AdamW with validation macro-F1 selection. See hashed configs for weight decay, smoothing, dropout and augmentation settings. Config snapshots are authoritative; report manifest hashes current config files. Gated mean closer to one weights the speech-side representation more, but cannot establish causal reliance.
 
-References transcribed from PLAN.md: [B1] Chen et al., WavLM, IEEE JSTSP 2022, arXiv 2110.13900. [B2] Okabe et al., Attentive Statistics Pooling, Interspeech 2018, arXiv 1803.10963. [B3] Liu et al., RoBERTa, 2019, arXiv 1907.11692. [B4] Tsai et al., MulT, ACL 2019, arXiv 1906.00295. [B5] Arevalo et al., Gated Multimodal Units, ICLR-W 2017, arXiv 1702.01992. These motivate design; this implementation is not claimed to reproduce those papers.
+References: [B1] Chen et al., WavLM, IEEE JSTSP 2022, arXiv 2110.13900. [B2] Okabe et al., Attentive Statistics Pooling, Interspeech 2018, arXiv 1803.10963. [B3] Liu et al., RoBERTa, 2019, arXiv 1907.11692. [B4] Tsai et al., MulT, ACL 2019, arXiv 1906.00295. [B5] Arevalo et al., Gated Multimodal Units, ICLR-W 2017, arXiv 1702.01992. These motivate design; this implementation is not claimed to reproduce those papers.
 
 ![Available validation/training curves and learned WavLM layer weights.](figures/panel_2_4.png)
 
@@ -120,9 +120,9 @@ Required blocks: temporal (speech), contextual (text), fused (gated), from valid
 
 ![t-SNE: the same three required blocks.](../Results/verified_p0/plots/embeddings_tsne_protoA.png)
 
-Reproduction: follow the component README. tools/complete_model_verification.py reuses saved completed runs, and tools/finalize_evaluation.py regenerates the final tables and figures. Build: python tools/build_reports.py --final --verification-root assignment_2b_emotion/Results/verified_p0. Independent checkpoints, input hashes and environment records support reproduction; historical invalidated markers are retained only for audit. All reports remain private; no audio, model caches, checkpoints or secrets in Git.
+Reproduction: follow the component README. tools/finalize_evaluation.py regenerates the final tables and figures from checkpoint-verified predictions. Build: python tools/build_reports.py --final --verification-root assignment_2b_emotion/Results/verified_p0. Independent checkpoints, input hashes and environment records support reproduction; historical invalidated markers are excluded. Raw audio, model caches, checkpoints and secrets are excluded from Git.
 
-[B6] Pichora-Fuller & Dupuis, TESS, 2020. https://doi.org/10.5683/SP2/E8H2MF (reference from PLAN.md). All required headline runs, projections, failure cases and scoped Praat visual observations passed the final evidence gates. No manual gold boundary accuracy or population-level emotion-recognition generalization is claimed.
+[B6] Pichora-Fuller & Dupuis, TESS, 2020. https://doi.org/10.5683/SP2/E8H2MF. All required headline runs, projections, failure cases and scoped Praat visual observations passed the final evidence gates. No manual gold boundary accuracy or population-level emotion-recognition generalization is claimed.
 
 ## Pending evidence
 

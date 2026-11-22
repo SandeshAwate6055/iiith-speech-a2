@@ -1,9 +1,0 @@
-model,modality,protocol,n_folds,run,accuracy,accuracy_mean,accuracy_std,uar,uar_mean,uar_std,macro_f1,macro_f1_mean,macro_f1_std
-eGeMAPS+SVM,speech,A,5,classical_speech_protoA,98.43 +/- 0.58,0.9842860000000002,0.005805241080265284,98.43 +/- 0.58,0.9842860000000002,0.005805241080265284,98.43 +/- 0.58,0.9843219999999999,0.005788282646865142
-eGeMAPS+SVM,speech,B,2,classical_speech_protoB,18.04 +/- 1.61,0.18036,0.01607,18.04 +/- 1.61,0.18036,0.01607,12.45 +/- 0.71,0.12448,0.007089999999999999
-eGeMAPS+SVM,speech,C,5,classical_speech_protoC,98.54 +/- 0.50,0.985356,0.004973009551569337,98.54 +/- 0.50,0.985356,0.004973009551569337,98.55 +/- 0.49,0.985464,0.004919254415051132
-TFIDF+LogReg,text,A,5,classical_text_protoA,14.29 +/- 0.00,0.14286,0.0,14.29 +/- 0.00,0.14286,0.0,3.57 +/- 0.00,0.03571,0.0
-TFIDF+LogReg,text,B,2,classical_text_protoB,14.29 +/- 0.00,0.14286,0.0,14.29 +/- 0.00,0.14286,0.0,3.57 +/- 0.00,0.03571,0.0
-TFIDF+LogReg,text,C,5,classical_text_protoC,0.00 +/- 0.00,0.0,0.0,0.00 +/- 0.00,0.0,0.0,0.00 +/- 0.00,0.0,0.0
-speech_wavlm_bigru_asp,speech,A,5,speech_wavlm_bigru_asp_protoA,99.96 +/- 0.07,0.999642,0.0007159999999999834,99.96 +/- 0.07,0.999642,0.0007159999999999834,99.96 +/- 0.07,0.999642,0.0007159999999999834
-speech_wavlm_bigru_asp,speech,B,2,speech_wavlm_bigru_asp_protoB,60.71 +/- 8.21,0.607145,0.08214499999999997,60.71 +/- 8.21,0.607145,0.08214499999999997,56.23 +/- 7.53,0.562345,0.075295

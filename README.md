@@ -1,14 +1,67 @@
-# IIITH Speech Assignment 2
+# IIITH Speech Processing — Assignment 2
 
-This repository (`SandeshAwate6055/iiith-speech-a2`) must remain **PRIVATE**. Public-release instructions in PLAN.md are superseded by the user decision in PROGRESS.md. Do not change visibility or publish artifacts without separate authorization.
+This repository contains the complete implementation, evaluation artifacts, and final reports for **Assignment 2A (Forced Alignment using Montreal Forced Aligner)** and **Assignment 2B (Multimodal Emotion Recognition)**.
 
-- [2A: MFA alignment](assignment_2a_mfa/README.md)
-- [2B: speech, text and fusion](assignment_2b_emotion/README.md)
-- [Private GPU Colab notebook](assignment_2b_emotion/notebooks/P0_colab.ipynb)
+## Deliverables & Quick Links
 
-## Setup
+| Component | Deliverable | Location |
+|---|---|---|
+| **Assignment 2A** | Forced Alignment Guide & Setup | [`assignment_2a_mfa/README.md`](assignment_2a_mfa/README.md) |
+| **Assignment 2A** | Final PDF Report (3 pages) | [`assignment_2a_mfa/report/report_2a.pdf`](assignment_2a_mfa/report/report_2a.pdf) |
+| **Assignment 2A** | Generated TextGrids (Primary + Extra Credit) | [`assignment_2a_mfa/outputs/textgrids/`](assignment_2a_mfa/outputs/textgrids/) |
+| **Assignment 2A** | Alignment Evaluation & Praat Observations | [`assignment_2a_mfa/outputs/evaluation/summary.md`](assignment_2a_mfa/outputs/evaluation/summary.md), [`praat_observations.md`](assignment_2a_mfa/outputs/evaluation/praat_observations.md) |
+| **Assignment 2B** | Multimodal Emotion Recognition Guide & Setup | [`assignment_2b_emotion/README.md`](assignment_2b_emotion/README.md) |
+| **Assignment 2B** | Final PDF Report (6 pages) | [`assignment_2b_emotion/report/report_2b.pdf`](assignment_2b_emotion/report/report_2b.pdf) |
+| **Assignment 2B** | Accuracy Tables & Comparative Analysis | [`assignment_2b_emotion/Results/accuracy_tables.md`](assignment_2b_emotion/Results/accuracy_tables.md), [`comparative_analysis.md`](assignment_2b_emotion/Results/comparative_analysis.md) |
+| **Assignment 2B** | Error Analysis (5 Failure Cases) & Plots | [`assignment_2b_emotion/Results/failure_cases.md`](assignment_2b_emotion/Results/failure_cases.md), [`assignment_2b_emotion/Results/plots/`](assignment_2b_emotion/Results/plots/) |
 
-Use Python 3.10. From the repository root in PowerShell:
+---
+
+## Repository Structure
+
+```text
+iiith-speech-a2/
+├── README.md
+├── requirements.txt
+├── assignment_2a_mfa/                  # Assignment 2A: MFA Forced Alignment
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── run_pipeline.ps1
+│   ├── configs/pipeline.yaml
+│   ├── dictionaries/                   # Custom ARPAbet lexicon, G2P & manual overrides
+│   ├── scripts/                        # Corpus prep, lexicon audit, MFA runner, CTC & plots
+│   ├── outputs/
+│   │   ├── evaluation/                 # Alignment metrics, lexicon audit & Praat observations
+│   │   ├── figures/                    # 6 waveform + spectrogram + TextGrid visualizations
+│   │   ├── praat_screenshots/          # Genuine Praat editor captures (ISLE 01 & 02)
+│   │   └── textgrids/                  # english_us_arpa, adapted_arpa, english_mfa, isle_probe, ctc
+│   ├── report/report_2a.pdf
+│   └── tests/
+├── assignment_2b_emotion/              # Assignment 2B: Multimodal Emotion Recognition (TESS)
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── requirements-lock-windows.txt
+│   ├── environment_versions.json
+│   ├── configs/                        # speech.yaml, text.yaml, fusion_concat.yaml, fusion.yaml
+│   ├── splits/                         # Frozen Protocols A, B, C split manifests
+│   ├── models/                         # Required train.py / test.py pipeline entry points
+│   │   ├── speech_pipeline/
+│   │   ├── text_pipeline/
+│   │   └── fusion_pipeline/
+│   ├── src/mer/                        # Modular data, feature, model, training & evaluation package
+│   ├── Results/                        # Accuracy tables, comparative analysis, verified_p0 & plots
+│   ├── report/report_2b.pdf
+│   └── tests/
+└── tools/
+    ├── build_reports.py
+    └── finalize_evaluation.py
+```
+
+---
+
+## Environment Setup
+
+Use Python 3.10 for the core ML/evaluation environment. From the repository root in PowerShell:
 
 ```powershell
 py -3.10 -m venv .venv
@@ -16,31 +69,53 @@ py -3.10 -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 python -m pip install -r requirements.txt
-python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ```
 
-Component requirements match the installed evaluation environment. `assignment_2b_emotion/environment_versions.json` records actual versions; `requirements-lock-windows.txt` captures this Windows environment. Install CUDA torch first as above. MFA has a separate micromamba/conda environment; PDF generation uses its isolated report environment. Colab is an unvalidated fallback and was not used for final results.
+- **Assignment 2A (MFA)**: Uses an isolated Conda/Micromamba environment (`montreal-forced-aligner=3.4.4`). See [`assignment_2a_mfa/README.md`](assignment_2a_mfa/README.md) for step-by-step installation, corpus normalization, lexicon building, and alignment commands.
+- **Assignment 2B (TESS Emotion Recognition)**: Exact package versions are pinned in [`assignment_2b_emotion/requirements.txt`](assignment_2b_emotion/requirements.txt) and [`assignment_2b_emotion/environment_versions.json`](assignment_2b_emotion/environment_versions.json). See [`assignment_2b_emotion/README.md`](assignment_2b_emotion/README.md) for feature extraction, training, testing, and evaluation commands.
 
-## Data and repository rules
+---
 
-Never commit raw/licensed audio, datasets, processed audio, features, caches, checkpoints, credentials, or tokens. Keep these on authorized local storage/private Drive. Do not force-add ignored files. Clear notebook outputs and review staged diffs before any separately authorized commit. `.gitignore` is a safeguard, not a complete secret scanner. Share private access with collaborators; do not make the repository public for Colab.
+## Summary of Results
 
-2A uses only the six assignment-provided BU/ISLE recordings, whose audio is licensed. TESS was acquired from Borealis DOI `10.5683/SP2/E8H2MF` (PROGRESS records CC BY-NC 4.0); retain attribution and check the downloaded license for your use. No audio redistribution is authorized.
+### Assignment 2A: Forced Alignment (BU Radio & ISLE)
+- **Dataset**: 6 provided recordings (3 BU Radio broadcast clips transcoded from NIST SPHERE to 16 kHz mono RIFF PCM16; 3 ISLE non-native learner clips; 97.163 s total duration).
+- **Lexicon**: 145 unique corpus word types (248 pronunciations); 11 base OOV types resolved via G2P and curated overrides (`0` final OOVs).
+- **Alignment**: Primary `english_us_arpa` (v3.3.0) and speaker-adapted `adapted_arpa` (fMLLR) align 100% of transcript words (`68/73/82/5/5/5`) with zero structural gaps, overlaps, or `spn` intervals. Extra-credit comparisons include `english_mfa` (IPA), `isle_probe`, and a neural `ctc` word-boundary baseline.
 
-## Final recovery and results
+### Assignment 2B: Multimodal Emotion Recognition (TESS)
+All 12 neural headline configurations (plus classical `eGeMAPS+SVM` and `TF-IDF+LR` baselines and zero-text interventions) were evaluated across frozen splits and independently verified against checkpoint SHA256 hashes in [`assignment_2b_emotion/Results/verified_p0/`](assignment_2b_emotion/Results/verified_p0/):
+- **Protocol A** (5-fold word-disjoint, shared speakers)
+- **Protocol B** (2-fold speaker-independent LOSO + word-disjoint stress test)
+- **Protocol C** (5-fold random stratified optimistic reference)
 
-The crash-recovered checkpoints were re-evaluated into `assignment_2b_emotion/Results/verified_p0/`; each headline run includes checkpoint hashes, prediction hashes and explicit embedding IDs. Historical text-training lineage remains affected by the recorded concurrency incident; old P0 markers are not used as evidence. Only the missing concat-C run was trained during final recovery.
+| System | Architecture | Protocol A Macro-F1 (%) | Protocol B Macro-F1 (%) | Protocol C Macro-F1 (%) |
+|---|---|---:|---:|---:|
+| **Speech** | WavLM-Base+ (13-layer sum) + BiGRU + ASP | **99.96 ± 0.07** | **56.23 ± 7.53** | **99.86 ± 0.13** |
+| **Text** | RoBERTa-base (top-2 layer FT + attention pool) | 3.57 ± 0.00 (14.29% Acc) | 6.31 ± 0.22 (14.29% Acc) | 4.34 ± 0.97 (14.25% Acc) |
+| **Concat Fusion** | WavLM-BiGRU-ASP + RoBERTa Concatenation | 99.82 ± 0.11 | 34.44 ± 4.66 | 99.72 ± 0.27 |
+| **Gated Fusion** | 4-Head Bidirectional Cross-Attention + Gate | 99.79 ± 0.13 | 46.40 ± 1.44 | 99.82 ± 0.28 |
+| *Classical Speech* | *eGeMAPS (88-dim) + RBF SVM (train+val fit)* | *98.43 ± 0.58* | *12.45 ± 0.71* | *98.55 ± 0.49* |
+| *Classical Text* | *TF-IDF + Logistic Regression (train+val fit)* | *3.57 ± 0.00 (14.29% Acc)* | *3.57 ± 0.00 (14.29% Acc)* | *0.00 ± 0.00 (0.00% Acc)* |
 
-- [2A report](assignment_2a_mfa/report/report_2a.pdf), [alignment evaluation](assignment_2a_mfa/outputs/evaluation/summary.md), and [Praat observations](assignment_2a_mfa/outputs/evaluation/praat_observations.md).
-- [2B report](assignment_2b_emotion/report/report_2b.pdf), [accuracy tables](assignment_2b_emotion/Results/accuracy_tables.md), [comparative analysis](assignment_2b_emotion/Results/comparative_analysis.md), and [five failure cases](assignment_2b_emotion/Results/failure_cases.md).
-- [PLAN.md](PLAN.md) is the approved historical plan; [PROGRESS.md](PROGRESS.md) is the current recovery record. No public release or submission is performed automatically.
+---
 
-From the repository root, with prepared data and local saved checkpoints:
+## Verification & Testing
+
+Run the automated test suite (19 unit and split-leakage tests) from the repository root:
 
 ```powershell
-python tools/complete_model_verification.py
+$env:PYTHONPATH = "assignment_2b_emotion/src;assignment_2a_mfa/scripts"
+python -m pytest assignment_2a_mfa/tests assignment_2b_emotion/tests -q
+```
+
+To regenerate the consolidated 2B evaluation tables/plots and rebuild both final PDF reports from the verified outputs:
+
+```powershell
 python tools/finalize_evaluation.py
 python tools/build_reports.py --final --verification-root assignment_2b_emotion/Results/verified_p0
 ```
 
-The first command preserves completed runs and evaluates saved weights; it trains only the missing concat-C baseline when its completed output is absent. Do not use it as a general retraining command. PDF dependencies are `reportlab`, `pymupdf`, `numpy`, `PyYAML`; the existing isolated interpreter is documented in the report build guide. Raw data, cached features and checkpoints are intentionally absent from Git; component READMEs describe acquisition and fresh training. Use new experiment names for fresh training, never overwrite historical runs.
+## Data & Licensing Policy
+
+Raw/licensed audio recordings (BU Radio, ISLE, TESS), cached feature tensors, and large model checkpoints are excluded from Git tracking via [`.gitignore`](.gitignore). TESS is sourced from Borealis Dataverse (`doi:10.5683/SP2/E8H2MF`, CC BY-NC 4.0).

@@ -1,6 +1,0 @@
-fold,utt_id,speaker,word,y_true,y_pred,true_label,pred_label,confidence,source
-4,OAF_chain_happy,OAF,chain,3,6,happy,surprise,0.9801100470870664,Protocol A (classical_speech_protoA)
-2,OAF_keen_disgust,OAF,keen,1,5,disgust,sad,0.9353672113315704,Protocol A (classical_speech_protoA)
-3,OAF_sail_surprise,OAF,sail,6,3,surprise,happy,0.8734253908082107,Protocol A (classical_speech_protoA)
-0,YAF_fail_fear,YAF,fail,2,0,fear,angry,0.9210553897664846,Protocol B LOSO (classical_speech_protoB)
-0,YAF_said_happy,YAF,said,3,0,happy,angry,0.9173164769457676,Protocol B LOSO (classical_speech_protoB)

@@ -38,3 +38,38 @@ submission_ready/
 competitor ASS_2/
 ~$*
 
+# Internal planning, temporary audits, duplicate plots and build intermediates
+PLAN.md
+PLAN.pdf
+PROGRESS.md
+assignment_2a_mfa/outputs/evaluation/plot_observations.md
+assignment_2a_mfa/report/.gitignore
+assignment_2a_mfa/report/BUILD.md
+assignment_2a_mfa/report/build_manifest.json
+assignment_2a_mfa/report/figures/
+assignment_2a_mfa/report/qa/
+assignment_2b_emotion/configs/fusion_late.yaml
+assignment_2b_emotion/notebooks/P0_colab.ipynb
+assignment_2b_emotion/report/.gitignore
+assignment_2b_emotion/report/BUILD.md
+assignment_2b_emotion/report/build_manifest.json
+assignment_2b_emotion/report/figures/
+assignment_2b_emotion/report/qa/
+assignment_2b_emotion/Results/audits/
+assignment_2b_emotion/Results/per_fold/fusion_late_protoA/
+assignment_2b_emotion/Results/per_fold/*/fold_*_complete.json
+assignment_2b_emotion/Results/per_fold/*/p0_provenance.json
+assignment_2b_emotion/Results/verified_p0/plots/
+assignment_2b_emotion/Results/verified_p0/accuracy_tables.csv
+assignment_2b_emotion/Results/verified_p0/accuracy_tables.md
+assignment_2b_emotion/Results/verified_p0/comparative_analysis.md
+assignment_2b_emotion/Results/verified_p0/evaluation_validation.json
+assignment_2b_emotion/Results/verified_p0/failure_cases.csv
+assignment_2b_emotion/Results/verified_p0/failure_cases.md
+assignment_2b_emotion/Results/verified_p0/per_emotion_validated.csv
+tools/complete_model_verification.py
+tools/continue_p0.ps1
+tools/md2pdf.py
+tools/save_praat_capture.py
+
+

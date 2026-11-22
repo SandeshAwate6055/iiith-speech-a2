@@ -53,7 +53,7 @@ Duration flags: 84 intervals at 30 ms; 1 above 300 ms. These are review candidat
 
 Reproduce using assignment_2a_mfa/README.md and scripts/prepare_models.py, prepare_lexicon.py, run_alignment.py, then evaluate_alignments.py and visualize.py. Regenerate with python tools/build_reports.py. Six source figures: F2BJRLP1_excerpt.png, F2BJRLP2_excerpt.png, F2BJRLP3_excerpt.png, ISLE_SESS0131_BLOCKD02_01_sprt1_full.png, ISLE_SESS0131_BLOCKD02_02_sprt1_full.png, ISLE_SESS0131_BLOCKD02_03_sprt1_full.png.
 
-[A1] McAuliffe et al., Montreal Forced Aligner, Interspeech 2017. https://www.isca-archive.org/interspeech_2017/mcauliffe17_interspeech.html (from PLAN.md). Lexicon audit records model/base dictionary CC BY 4.0. Repository stays private; licensed audio/caches/checkpoints are never committed.
+[A1] McAuliffe et al., Montreal Forced Aligner, Interspeech 2017. https://www.isca-archive.org/interspeech_2017/mcauliffe17_interspeech.html. Lexicon audit records model/base dictionary CC BY 4.0. Licensed raw audio, caches and checkpoints are excluded from Git.
 
 ## Pending evidence
 
