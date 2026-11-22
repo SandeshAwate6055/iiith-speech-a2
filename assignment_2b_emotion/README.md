@@ -2,6 +2,7 @@
 |---|---|
 | Reports | [2B final PDF · 19 pages](report/report_2b.pdf) · [Combined report](../Combined_Report.pdf) · [Project overview](../README.md) |
 | Evidence | [Full results](Results/accuracy_tables.md) · [Verification](Results/verified_p0/) · [Plots](Results/plots/) · [Failure cases](Results/failure_cases.md) |
+| Read in order | [Results and graphs](#main-experimental-results-and-performance-plots) / [Architecture](#architecture-and-technical-design) / [Dataset](#tess-dataset-and-preprocessing) / [Experiments](#training-configuration-and-evaluation-protocols) / [Requirements](#official-requirements-and-evidence) |
 | Pipelines | [Speech](models/speech_pipeline/) · [Text](models/text_pipeline/) · [Fusion](models/fusion_pipeline/) · [Reproducibility](#reproducibility) |
 
 # Assignment 2B · Multimodal emotion recognition
@@ -28,6 +29,16 @@ Six model families are evaluated under three fixed protocols. Entries are accura
 The five functional blocks are preprocessing, feature extraction, temporal/contextual modelling, fusion and classification. Speech is represented by frame sequences and ASP embeddings; text by contextual token sequences and a pooled embedding. Each required pipeline has separate train/test entry points.
 
 **Diagram clarifications:** WavLM's 13 cached states comprise the convolutional representation plus 12 Transformer states. Gated cross-attention consumes projected **frame/token sequences before pooling**, rather than only the pooled vectors shown schematically. Concatenation uses pooled projected embeddings and was evaluated for A/B/C despite its optional label. `surprise` is the stored alias for pleasant surprise, not an eighth class.
+
+### Why these architectures?
+
+| Required functional block | Chosen design and rationale |
+|---|---|
+| Preprocessing | Fixed-rate, trimmed audio reduces irrelevant duration variation; cleaned carrier text removes label-bearing filename suffixes before tokenization. |
+| Feature extraction | Frozen pretrained WavLM supplies acoustic representations with reusable caches; RoBERTa supplies contextual token features. eGeMAPS and TF-IDF provide simpler baselines. |
+| Temporal/contextual modelling | BiGRU captures frame order, while ASP preserves weighted mean and variability. RoBERTa contextualizes tokens; masked attention pooling handles padding and varying lengths. |
+| Fusion | Concatenation tests whether simple joint features suffice. Bidirectional cross-attention permits frame/token interactions; vector gating permits dimension-wise mixing. These motivations do not imply an empirical improvement. |
+| Classifier | Small dropout-regularized MLP heads map the respective utterance representations to the same seven labels for comparable evaluation. |
 
 ## TESS dataset and preprocessing
 
@@ -111,6 +122,12 @@ Zero-text is an evaluation intervention, not a retrained architecture. In B, gat
 
 [All model/protocol confusion matrices](Results/plots/) · [Per-fold results](Results/per_fold/).
 
+### Which emotions are easiest and hardest, and when does fusion help?
+
+On Protocol B, speech recall is highest for fear (100%) and lowest for happy (0%). The five examples below expose actual confusions; pitch or duration differences alone do not establish their cause. Speaker-dependent prosody and acted-emotion overlap are plausible explanations, limited by the two-speaker sample.
+
+Gated fusion increases neutral recall from 65.00% to 91.25% and surprise from 67.50% to 80.00%, but reduces overall macro-F1 from 56.23% to 46.40%. Thus its gains are class-specific, not an overall advantage. Near-ceiling Protocol A results should not obscure the speaker-transfer failures in B.
+
 ## UMAP, t-SNE and five verified failure cases
 
 Both projection figures show Protocol A fold 0 test examples across temporal (speech ASP, 512-d), contextual (text pool, 256-d) and gated fusion (256-d) blocks. Projection geometry is descriptive and does not establish unseen-speaker robustness or causal modality contributions.
@@ -172,6 +189,23 @@ Repeat required runs with `--protocol B` and `--protocol C`, using unique corres
 </details>
 
 [Training/evaluation source](src/mer/) · [Tests](tests/) · [Saved evaluation verification](Results/verified_p0/) · [Consolidated evaluation validation](Results/evaluation_validation.json).
+
+## Official requirements and evidence
+
+| Official deliverable | Existing implementation or evidence |
+|---|---|
+| TESS data; speech/text preprocessing | [Dataset audit](Results/data_audit.md), [data preparation](src/mer/data/), [feature extraction](src/mer/features/) |
+| Appropriate architectures for all five functional blocks, with reasons | [Architecture rationale](#why-these-architectures), [speech](#wavlm-bigru-asp-speech-pipeline), [text](#roberta-contextual-text-pipeline), [fusion](#gated-cross-attention-and-concatenation-fusion) |
+| Speech pipeline train.py and test.py | [Train](models/speech_pipeline/train.py), [test](models/speech_pipeline/test.py) |
+| Text pipeline train.py and test.py | [Train](models/text_pipeline/train.py), [test](models/text_pipeline/test.py) |
+| Fusion pipeline train.py and test.py | [Train](models/fusion_pipeline/train.py), [test](models/fusion_pipeline/test.py) |
+| Accuracy tables for all three variants and experiments comparing them | [A/B/C tables](Results/accuracy_tables.md), [machine-readable results](Results/accuracy_tables.csv), [comparison plot](Results/plots/model_comparison_protocols.png) |
+| Easiest/hardest emotions; when fusion helps | [Per-emotion analysis](Results/comparative_analysis.md), [recall table](#per-emotion-recall) |
+| Three to five real failure cases | [Five prediction-backed cases](Results/failure_cases.md), [case CSV](Results/failure_cases.csv) |
+| Separability of temporal, contextual and fusion representations | [Three-block UMAP](Results/plots/embeddings_umap_protoA.png), [three-block t-SNE](Results/plots/embeddings_tsne_protoA.png) |
+| README, dependencies, report, results and public source | [Reproduction commands](#reproducibility), [requirements](requirements.txt), [individual report](report/report_2b.pdf), [combined report](../Combined_Report.pdf), [source](src/mer/) |
+
+The existing reports document the architecture decisions, experiments and analysis. Raw data, feature caches and large trained weights remain external to Git; fresh reproduction requires those local resources or computation. The historical text-training provenance limitation below remains explicit.
 
 ## Limitations and provenance
 

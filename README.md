@@ -2,11 +2,14 @@
 |---|---|---|---|
 | Assignment 2A | [Alignment README](assignment_2a_mfa/README.md) | [2A PDF](assignment_2a_mfa/report/report_2a.pdf) | [Results](assignment_2a_mfa/outputs/evaluation/summary.md) · [TextGrids](assignment_2a_mfa/outputs/textgrids/) |
 | Assignment 2B | [Emotion README](assignment_2b_emotion/README.md) | [2B PDF](assignment_2b_emotion/report/report_2b.pdf) | [Results](assignment_2b_emotion/Results/accuracy_tables.md) · [Plots](assignment_2b_emotion/Results/plots/) · [Model pipelines](assignment_2b_emotion/models/) |
+| Source code | [2A scripts](assignment_2a_mfa/scripts/) | [2B implementation](assignment_2b_emotion/src/mer/) | [Speech pipeline](assignment_2b_emotion/models/speech_pipeline/) / [Text pipeline](assignment_2b_emotion/models/text_pipeline/) / [Fusion pipeline](assignment_2b_emotion/models/fusion_pipeline/) |
 | Complete report | [Combined PDF](Combined_Report.pdf) | [Reproducibility](#reproducibility-and-repository-structure) | [Findings and limitations](#key-findings-and-limitations) |
 
 # IIITH Speech Processing · Assignment 2
 
 Forced alignment and multimodal emotion recognition, with reproducible pipelines, saved evaluation evidence and final technical reports. Assignment 2A aligns words and phones to audio; Assignment 2B tests how speech, text and fusion generalize across lexical and speaker splits.
+
+[2A requirements and evidence](assignment_2a_mfa/README.md#official-requirements-and-evidence) | [2B requirements and evidence](assignment_2b_emotion/README.md#official-requirements-and-evidence)
 
 ## Key achievements
 
@@ -16,7 +19,7 @@ Forced alignment and multimodal emotion recognition, with reproducible pipelines
 
 ## Protocol comparison
 
-Percentages are unweighted fold means · population standard deviations. [Full precision CSV](assignment_2b_emotion/Results/accuracy_tables.csv) · [Per-emotion analysis](assignment_2b_emotion/Results/comparative_analysis.md).
+Percentages are unweighted fold means ± population standard deviations. [Full precision CSV](assignment_2b_emotion/Results/accuracy_tables.csv) · [Per-emotion analysis](assignment_2b_emotion/Results/comparative_analysis.md).
 
 ### Protocol A · Word-disjoint, shared speakers · 5 folds
 

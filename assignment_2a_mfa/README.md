@@ -2,6 +2,7 @@
 |---|---|
 | Reports | [2A final PDF · 17 pages](report/report_2a.pdf) · [Combined report](../Combined_Report.pdf) · [Project overview](../README.md) |
 | Evidence | [Results](outputs/evaluation/summary.md) · [TextGrids](outputs/textgrids/) · [Praat observations](outputs/evaluation/praat_observations.md) |
+| Read in order | [Results and graphs](#main-alignment-results-and-visualizations) / [Architecture](#architecture-and-technical-design) / [Preparation](#audio-and-transcript-preparation) / [Experiments](#mfa-acoustic-alignment-and-five-evaluated-configurations) / [Requirements](#official-requirements-and-evidence) |
 | Reproduce | [Architecture](#architecture-and-technical-design) · [Installation and execution](#installation-and-execution) · [Source and references](#source-outputs-tests-and-references) |
 
 # Assignment 2A · Forced alignment
@@ -135,6 +136,23 @@ conda activate mfa
 For Micromamba installations and environment/root options, inspect `python scripts/run_alignment.py --help` for MFA environment/root options. The [full configuration runner](run_pipeline.ps1) includes cleaning/overwrite operations and should run only in a separate reproduction workspace, not over preserved results.
 
 </details>
+
+## Official requirements and evidence
+
+The supplied 2A brief requests the provided audio/transcript pairs only, MFA setup, a pronunciation dictionary, word/phone alignment, Praat inspection and a short report. Multiple acoustic models and automation are extra credit.
+
+| Official requirement | Existing implementation or evidence |
+|---|---|
+| Install MFA and prepare its corpus format | [Environment and commands](#installation-and-execution), [corpus preparation](scripts/prepare_corpus.py) |
+| Use only supplied recordings and transcripts | [Six-recording inventory](#audio-and-transcript-preparation), [normalization tests](tests/test_normalize.py) |
+| Select dictionary; handle missing pronunciations | [G2P and curated lexicon](#dictionary-construction-g2p-and-oov-handling), [coverage audit](outputs/evaluation/lexicon_audit.json) |
+| Align word and phoneme boundaries | [Primary MFA TextGrids](outputs/textgrids/english_us_arpa/), [validity checks](outputs/evaluation/validity_and_durations.csv) |
+| Inspect TextGrids in Praat; identify offsets/mismatches | [Genuine captures](outputs/praat_screenshots/), [observations and inspection scope](outputs/evaluation/praat_observations.md), [alignment analysis](#alignment-analysis-pronunciation-observations-and-limitations) |
+| Report model/dictionary, example visualization and observations | [Existing individual report](report/report_2a.pdf), [combined report](../Combined_Report.pdf) |
+| Public scripts, setup instructions and outputs | [Scripts](scripts/), [commands](#installation-and-execution), [outputs](outputs/) |
+| Extra credit: multiple models and automation | [Five configurations](#mfa-acoustic-alignment-and-five-evaluated-configurations), [guarded orchestrator](scripts/run_alignment.py) |
+
+The brief's separate email/report submission is an owner action; repository documentation does not claim submission. Licensed source audio is restored locally for reproduction, rather than redistributed here. The CTC comparator is supplementary and does not replace the primary MFA phone tiers.
 
 ## Source, outputs, tests and references
 
