@@ -3,7 +3,7 @@
 | Assignment 2A | [Alignment README](assignment_2a_mfa/README.md) | [2A PDF](assignment_2a_mfa/report/report_2a.pdf) | [Results](assignment_2a_mfa/outputs/evaluation/summary.md) · [TextGrids](assignment_2a_mfa/outputs/textgrids/) |
 | Assignment 2B | [Emotion README](assignment_2b_emotion/README.md) | [2B PDF](assignment_2b_emotion/report/report_2b.pdf) | [Results](assignment_2b_emotion/Results/accuracy_tables.md) · [Plots](assignment_2b_emotion/Results/plots/) · [Model pipelines](assignment_2b_emotion/models/) |
 | Source code | [2A scripts](assignment_2a_mfa/scripts/) | [2B implementation](assignment_2b_emotion/src/mer/) | [Speech pipeline](assignment_2b_emotion/models/speech_pipeline/) / [Text pipeline](assignment_2b_emotion/models/text_pipeline/) / [Fusion pipeline](assignment_2b_emotion/models/fusion_pipeline/) |
-| Complete report | [Combined PDF](Combined_Report.pdf) | [Reproducibility](#reproducibility-and-repository-structure) | [Findings and limitations](#key-findings-and-limitations) |
+| Complete report | [Combined PDF - 29 pages](Combined_Report.pdf) | [Reproducibility](#reproducibility-and-repository-structure) | [Findings and limitations](#key-findings-and-limitations) |
 
 # IIITH Speech Processing · Assignment 2
 
@@ -66,13 +66,13 @@ The embedding panels use Protocol A fold 0, not pooled cross-fold coordinates. [
 
 ![ARCH 2A: forced alignment](docs/figures/ARCH_2A.png)
 
-Diagram clarification: implemented transcript normalization is **lowercase**, despite the diagram's uppercase label. CTC produces word-only alignments. [Technical details](assignment_2a_mfa/README.md#architecture-and-technical-design).
+The final architecture shows **lowercase** transcript normalization, custom dictionary/G2P handling and parallel alignment alternatives. CTC produces **word-only** alignments; the primary MFA path supplies words and phones. [Technical details](assignment_2a_mfa/README.md#architecture-and-technical-design).
 
 ## Architecture · Assignment 2B
 
 ![ARCH 2B: speech, text and multimodal fusion](docs/figures/ARCH_2B.png)
 
-Cross-attention operates on projected speech **frame** and text **token** sequences before pooling. Concatenation uses pooled embeddings and was evaluated under all three protocols. [Dimensions and implementation](assignment_2b_emotion/README.md#architecture-and-technical-design).
+The final architecture traces all five functional blocks. Gated cross-attention operates on projected speech **frame** and text **token** sequences before pooling. Concatenation uses pooled embeddings and was evaluated under all three protocols. [Dimensions and implementation](assignment_2b_emotion/README.md#architecture-and-technical-design).
 
 ## The two assignments
 
@@ -80,6 +80,8 @@ Cross-attention operates on projected speech **frame** and text **token** sequen
 |---|---|---|
 | [2A: forced alignment](assignment_2a_mfa/README.md) | Normalize audio/transcripts, resolve OOVs and align words/phones with MFA | [Alignment evaluation](assignment_2a_mfa/outputs/evaluation/summary.md), [Praat observations](assignment_2a_mfa/outputs/evaluation/praat_observations.md) |
 | [2B: emotion recognition](assignment_2b_emotion/README.md) | Compare WavLM speech, RoBERTa text, concatenation and gated cross-attention | [Verified evaluations](assignment_2b_emotion/Results/verified_p0/), [confusion matrices and plots](assignment_2b_emotion/Results/plots/) |
+
+The final reports provide clickable contents, PDF bookmarks and page numbering: [2A - 10 pages](assignment_2a_mfa/report/report_2a.pdf), [2B - 19 pages](assignment_2b_emotion/report/report_2b.pdf), and [complete 2A followed by 2B - 29 pages](Combined_Report.pdf).
 
 ## Reproducibility and repository structure
 

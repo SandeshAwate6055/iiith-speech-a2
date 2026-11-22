@@ -7,6 +7,8 @@
 
 # Assignment 2B · Multimodal emotion recognition
 
+The 19-page report presents verified results and confusion plots before the corrected five-block architecture and methodology. It includes UMAP/t-SNE, training plots, five prediction-backed failure cases, limitations and reproducibility, with clickable contents and PDF bookmarks.
+
 ## Main experimental results and performance plots
 
 Six model families are evaluated under three fixed protocols. Entries are accuracy / macro-F1 (%), unweighted fold means. [Full precision and population standard deviations](Results/accuracy_tables.csv).
@@ -28,7 +30,7 @@ Six model families are evaluated under three fixed protocols. Entries are accura
 
 The five functional blocks are preprocessing, feature extraction, temporal/contextual modelling, fusion and classification. Speech is represented by frame sequences and ASP embeddings; text by contextual token sequences and a pooled embedding. Each required pipeline has separate train/test entry points.
 
-**Diagram clarifications:** WavLM's 13 cached states comprise the convolutional representation plus 12 Transformer states. Gated cross-attention consumes projected **frame/token sequences before pooling**, rather than only the pooled vectors shown schematically. Concatenation uses pooled projected embeddings and was evaluated for A/B/C despite its optional label. `surprise` is the stored alias for pleasant surprise, not an eighth class.
+The corrected diagram distinguishes sequence and pooled inputs: WavLM's 13 cached states comprise the convolutional representation plus 12 Transformer states; gated cross-attention consumes projected **frame/token sequences before pooling**; concatenation consumes **pooled embeddings**. Both fusion variants were evaluated for A/B/C. `surprise` is the stored alias for pleasant surprise, not an eighth class.
 
 ### Why these architectures?
 

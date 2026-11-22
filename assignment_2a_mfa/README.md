@@ -1,11 +1,13 @@
 | Quick navigation | Links |
 |---|---|
-| Reports | [2A final PDF · 17 pages](report/report_2a.pdf) · [Combined report](../Combined_Report.pdf) · [Project overview](../README.md) |
+| Reports | [2A final PDF · 10 pages](report/report_2a.pdf) · [Combined report](../Combined_Report.pdf) · [Project overview](../README.md) |
 | Evidence | [Results](outputs/evaluation/summary.md) · [TextGrids](outputs/textgrids/) · [Praat observations](outputs/evaluation/praat_observations.md) |
 | Read in order | [Results and graphs](#main-alignment-results-and-visualizations) / [Architecture](#architecture-and-technical-design) / [Preparation](#audio-and-transcript-preparation) / [Experiments](#mfa-acoustic-alignment-and-five-evaluated-configurations) / [Requirements](#official-requirements-and-evidence) |
 | Reproduce | [Architecture](#architecture-and-technical-design) · [Installation and execution](#installation-and-execution) · [Source and references](#source-outputs-tests-and-references) |
 
 # Assignment 2A · Forced alignment
+
+The 10-page report opens with results and alignment plots, then covers architecture, methodology, TextGrid examples, genuine Praat inspection and limitations. Its contents and PDF bookmarks are clickable.
 
 ## Main alignment results and visualizations
 
@@ -31,7 +33,7 @@ Six recordings total 97.163 seconds. All 145 corpus word types are covered by th
 
 The implementation decodes SPHERE/RIFF audio to 16 kHz mono PCM16, groups speakers, normalizes transcripts, constructs an audited G2P-backed lexicon and runs MFA GMM-HMM alignment with speaker adaptation. Word/phone tiers feed structural checks, cross-system comparisons and Praat inspection.
 
-**Diagram clarification:** transcripts are normalized to **lowercase**, not uppercase. The CTC branch produces word tiers only. The five configurations share evaluation machinery but do not all share a phone inventory or acoustic model. [Detailed executable schematic](../docs/figures/arch_2a_pipeline.png).
+The corrected architecture uses **lowercase** normalization and explicitly labels CTC as **word-only**. The five configurations share evaluation machinery but do not all share a phone inventory or acoustic model. [Detailed executable schematic](../docs/figures/arch_2a_pipeline.png).
 
 ## Audio and transcript preparation
 
