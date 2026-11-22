@@ -90,3 +90,5 @@ Plan: [PLAN.md](PLAN.md) (approved 20 Nov 11:09). Deadline: 22 Nov 23:59 IST (ta
 -20 completed evaluation rows include6 classical,12 neural headline and2 zero-text checks. Matched data-fit caveats and historical provenance limitations are explicit.52 local checkpoint files retained (48 headline plus4 unfinished late-fusion checkpoints).
 - Required code layout, README commands and package versions checked. Final repository preservation includes the legitimate src/mer/data Python package; only actual dataset directories are excluded.
 - Preparing a local submission package for owner review only. Private GitHub backup/final push is authorized; actual submission and any visibility change are not.
+
+- Final permitted source/results/reports pushed privately as9e2b743; remote synchronized. Local owner-review package created: submission_ready/IIITH_Assignment2_2026-11-22_READY_FOR_REVIEW.zip, 15.34 MB, 56 entries, ZIP CRC passed; SHA256 b2d87c117ec327979c51058ae41a499ebb38349bb57c4cd4e4fdd399c0eef48f. No submission/email/public release performed.

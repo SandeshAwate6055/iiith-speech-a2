@@ -32,3 +32,6 @@ kaggle.json
 # Rejected local QA captures
 *.invalid
 *.partial
+
+# Local owner-review delivery bundle (reports/source remain tracked separately)
+submission_ready/
