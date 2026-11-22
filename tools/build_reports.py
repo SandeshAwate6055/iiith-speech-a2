@@ -1,4 +1,4 @@
-"""Evidence-derived private MD/PDF reports. No training or evaluation outputs changed.
+"""Evidence validation helpers (used by build_final_reports.py). No training or evaluation outputs changed.
 Requires reportlab, pymupdf, numpy, PyYAML. Run from any directory.
 --final refuses missing/invalid evidence before writing. --allow-provisional-2a
 permits only the genuine Praat blocker, leaving report 2A explicitly DRAFT.
@@ -321,6 +321,7 @@ def main():
  ap.add_argument('--verification-root',type=Path,help='Distinct directory containing re-evaluated headline run folders; see BUILD.md')
  args=ap.parse_args()
  if args.self_test: self_test(); return 0
+ print('Evidence validator only. Build the final reports with tools/build_final_reports.py'); return 1
  ev=Evidence(args.root.resolve()); ev.verification_root=args.verification_root.resolve() if args.verification_root else None
  aa=a_pages(ev); good,status,failures=collect_b(ev); bb=b_pages(ev,good,status,failures)
  blocking=[x for x in ev.pending if not(args.allow_provisional_2a and x.startswith('2A Praat'))]
