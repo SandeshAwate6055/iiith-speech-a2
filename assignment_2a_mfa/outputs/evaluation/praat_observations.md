@@ -1,0 +1,12 @@
+# Praat visual inspection, 22 November 2026
+
+All six primary sound/TextGrid pairs were opened in Praat 7.0.03. All three ISLE files were viewed over their full duration; each BU file was viewed in full and zoomed to approximately its first 5.5 seconds. This is a visual boundary inspection, not a listening-based phonetic transcription or a manually annotated gold set. No boundaries or labels were edited.
+
+- ISLE 01: the five words occupy the speech-bearing region; initial and long trailing silence have blank intervals. Word and phone boundaries broadly track visible vowel energy and consonantal transitions. The terminal stop interval extends beyond the strong vowel energy; weak release/noise makes the precise endpoint uncertain. Screenshot praat_isle01.jpg records the genuine editor view.
+- ISLE 02: new contains the dictionary variant N Y UW1; no has N OW1. The 350 ms OW1 interval at 1.870-2.220 s includes the falling final voiced region and weak tail. Its endpoint is a timing-review candidate, not a measured error against gold. Screenshot praat_isle02.jpg records this view.
+- ISLE 03: AE1 and EH1 are imposed canonical vowel labels in bad and bed. The visible vowel-bearing regions are separated, but forced labels alone cannot establish the speaker produced the intended vowel contrast. Long trailing silence is not assigned to a word.
+- BU 01-03: opening word order was checked in detailed waveform/spectrogram views (wanted chief justice; in nineteen seventy six; the author of more than eight hundred). Reduced function words and consonants are densely spaced. The displayed words Dukakis, Hennessy and SJC retain explicit pronunciation-based phone intervals. Full-duration BU views suppress spectrograms beyond Praat's default analysis window, so detailed review used zoomed views.
+
+No skipped words or spn were found in the primary exported sequence. Very short BU phones (29/28/27 at <=31 ms) are duration flags rather than proof of missing phones. No gold boundary MAE is claimed. Separately, the optional English-MFA comparison has a confirmed transcript mismatch in F2BJRLP2 and nine spn intervals across the corpus; these are model/dictionary limitations, not crash corruption. Quantitative agreement is not a substitute for reference boundary accuracy.
+
+Evidence: outputs/praat_screenshots/praat_isle01.jpg and praat_isle02.jpg. These are actual Praat captures, not generated alignment plots. Original primary TextGrids are preserved unchanged.

@@ -21,12 +21,13 @@ from sklearn.metrics import confusion_matrix, silhouette_score
 from mer.utils.common import EMOTIONS
 from mer.evaluation.validate_evaluation import validate_run, completed_runs
 
+RUN_ROOT = Path("Results/per_fold")
 PLOTS = Path("Results/plots")
 PLOTS.mkdir(parents=True, exist_ok=True)
 
 
 def plot_confusion(run_name: str, title: str, out_name: str):
-    p = Path("Results/per_fold") / run_name / "predictions.csv"
+    p = RUN_ROOT / run_name / "predictions.csv"
     if not p.exists() or not (p.parent / "summary.json").exists():
         return
     df, _ = validate_run(p.parent)
@@ -46,7 +47,9 @@ def plot_confusion(run_name: str, title: str, out_name: str):
 def plot_training_curves(run_names: dict[str, str], out_name: str = "training_curves_protoA.png"):
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.2))
     for label, run in run_names.items():
-        hp = Path("Results/per_fold") / run / "train_history.json"
+        hp = RUN_ROOT / run / "train_history.json"
+        if not hp.exists():
+            hp = Path("Results/per_fold") / run / "train_history.json"
         if not hp.exists():
             continue
         hist = json.loads(hp.read_text(encoding="utf-8"))
@@ -81,7 +84,7 @@ def plot_embeddings_panel(blocks: list[tuple[str, str]], method: str = "umap", o
     stats = {}
 
     for ax, (title, run) in zip(axes, blocks):
-        rdir = Path("Results/per_fold") / run
+        rdir = RUN_ROOT / run
         ep, pp = rdir / "embeddings.npy", rdir / "predictions.csv"
         if not (ep.exists() and pp.exists()):
             ax.set_title(f"{title} (missing)")
@@ -136,7 +139,7 @@ def plot_embeddings_panel(blocks: list[tuple[str, str]], method: str = "umap", o
 
 
 def plot_layer_weights(run_name: str, out_name: str = "wavlm_layer_weights.png"):
-    sp = Path("Results/per_fold") / run_name / "summary.json"
+    sp = RUN_ROOT / run_name / "summary.json"
     if not sp.exists():
         return
     d = json.loads(sp.read_text(encoding="utf-8"))
@@ -158,25 +161,24 @@ def plot_layer_weights(run_name: str, out_name: str = "wavlm_layer_weights.png")
 
 
 def plot_model_comparison(out_name: str = "model_comparison_protocols.png"):
-    rows = []
-    for run in completed_runs():
-        _, d = validate_run(run)
-        rows.append({"run": run.name, "protocol": d["protocol"], "f1": d["macro_f1_mean"] * 100, "std": d["macro_f1_std"] * 100})
-    if not rows:
-        return
-    fig, ax = plt.subplots(figsize=(max(10, len(rows)*0.8), 4.8))
-    ax.bar(np.arange(len(rows)), [r["f1"] for r in rows],
-           yerr=[r["std"] for r in rows], capsize=4, color="#66c2a5")
-    ax.set_xticks(np.arange(len(rows)), [r["run"] for r in rows])
-    ax.set_ylabel("Macro-F1 (%)")
-    ax.set_xlabel("")
-    ax.set_ylim(0, 105)
-    ax.set_title("Macro-F1: fold mean +/- population fold SD (not confidence intervals)")
-    plt.xticks(rotation=25, ha="right")
-    ax.grid(axis="y", alpha=0.3)
-    plt.tight_layout()
-    fig.savefig(PLOTS / out_name, dpi=160)
-    plt.close(fig)
+    rows=[]
+    for run in completed_runs(RUN_ROOT):
+        if 'zerotext' in run.name: continue
+        _, d=validate_run(run)
+        rows.append(dict(model=d['model'], protocol=d['protocol'], f1=d['macro_f1_mean']*100, std=d['macro_f1_std']*100))
+    if not rows:return
+    df=pd.DataFrame(rows)
+    order=['eGeMAPS+SVM','TFIDF+LogReg','speech_wavlm_bigru_asp','text_roberta_top2ft','fusion_concat','fusion_gated_xattn']
+    names={'eGeMAPS+SVM':'eGeMAPS/SVM','TFIDF+LogReg':'TF-IDF/LR','speech_wavlm_bigru_asp':'WavLM/BiGRU','text_roberta_top2ft':'RoBERTa','fusion_concat':'Concat','fusion_gated_xattn':'Gated attention'}
+    order=[m for m in order if m in set(df.model)]
+    fig,ax=plt.subplots(figsize=(10.5,4.8));xs=np.arange(len(order));width=.24
+    for i,p in enumerate('ABC'):
+        sub=df[df.protocol==p].set_index('model').reindex(order)
+        ax.bar(xs+(i-1)*width,sub.f1,width,yerr=sub['std'],capsize=3,label=p)
+    ax.set_xticks(xs,[names.get(m,m) for m in order]);ax.set_ylim(0,105)
+    ax.set_ylabel('Macro-F1 (%)');ax.set_title('Fold mean +/- population SD; classical fits use train+validation')
+    ax.legend(title='Protocol');ax.grid(axis='y',alpha=.25);fig.tight_layout()
+    fig.savefig(PLOTS/out_name,dpi=170);plt.close(fig)
 
 
 if __name__ == "__main__":

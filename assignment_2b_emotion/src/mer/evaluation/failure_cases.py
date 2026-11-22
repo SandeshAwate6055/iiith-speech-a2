@@ -51,6 +51,7 @@ def select_failures(pred_df: pd.DataFrame, k: int = 5):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--root", default="Results/per_fold")
     ap.add_argument("--run", default="speech_wavlm_bigru_asp_protoA")
     ap.add_argument("--loso_run", default="speech_wavlm_bigru_asp_protoB")
     ap.add_argument("--meta", default="data/metadata.csv")
@@ -59,8 +60,8 @@ def main():
     a = ap.parse_args()
 
     meta = pd.read_csv(a.meta).set_index("utt_id")
-    p_a = Path("Results/per_fold") / a.run / "predictions.csv"
-    p_b = Path("Results/per_fold") / a.loso_run / "predictions.csv"
+    p_a = Path(a.root) / a.run / "predictions.csv"
+    p_b = Path(a.root) / a.loso_run / "predictions.csv"
     df_a = validate_run(p_a.parent, a.meta)[0] if (p_a.parent / "summary.json").exists() and p_a.exists() else pd.DataFrame()
     df_b = validate_run(p_b.parent, a.meta)[0] if (p_b.parent / "summary.json").exists() and p_b.exists() else pd.DataFrame()
 

@@ -1,0 +1,35 @@
+{
+  "queue_ownership_cleared": true,
+  "reconciled_after_collision": true,
+  "incident_sha256": "e57e87a6165f8047c4a24b3330b67a420b1987888a328c33a53bf49dc4b831eb",
+  "prediction_sha256": "d59752cf26cbda30d970106fcb0fbd386c8becf580c3a47acf474d4443f34a3b",
+  "summary_sha256": "4dfaf759c6b6278bdd9387181d76a17b5cc8d76a0dbcfa2e46b6cf6e43eccc75",
+  "embeddings_sha256": "a917d0cc797068ae96220296f9bf055e9dfca88fd8190f208802e39704cf7171",
+  "checkpoint_sha256": {
+    "assignment_2b_emotion/checkpoints/fusion_concat_protoC/fold_0.pt": "48cc587df43d9077153fd941d762f28310069abce1001ad84303f52e9d379a8b",
+    "assignment_2b_emotion/checkpoints/fusion_concat_protoC/fold_1.pt": "e88f0542b199f5e5bb9419fe04a4f0f1253ffb26418d2c8e9e9c1ec91f99d109",
+    "assignment_2b_emotion/checkpoints/fusion_concat_protoC/fold_2.pt": "a678605e2243ee13eb088310ebd41833749552e378b26d355ee3fef97c93a644",
+    "assignment_2b_emotion/checkpoints/fusion_concat_protoC/fold_3.pt": "38e6545d36f3a6c865a1ba998c057fbaf4bcf32550eb00f38a69b72548ceabca",
+    "assignment_2b_emotion/checkpoints/fusion_concat_protoC/fold_4.pt": "dc44ab730b1c53c632ae523aae0430b0bdc27f6c6e5756a91b6f8bedd841a126"
+  },
+  "input_sha256": {
+    "checkpoints/fusion_concat_protoC/fold_0.pt": "48cc587df43d9077153fd941d762f28310069abce1001ad84303f52e9d379a8b",
+    "checkpoints/fusion_concat_protoC/fold_1.pt": "e88f0542b199f5e5bb9419fe04a4f0f1253ffb26418d2c8e9e9c1ec91f99d109",
+    "checkpoints/fusion_concat_protoC/fold_2.pt": "a678605e2243ee13eb088310ebd41833749552e378b26d355ee3fef97c93a644",
+    "checkpoints/fusion_concat_protoC/fold_3.pt": "38e6545d36f3a6c865a1ba998c057fbaf4bcf32550eb00f38a69b72548ceabca",
+    "checkpoints/fusion_concat_protoC/fold_4.pt": "dc44ab730b1c53c632ae523aae0430b0bdc27f6c6e5756a91b6f8bedd841a126",
+    "src/mer/models/blocks.py": "28d0743e55729022285a8a0e612fbdd24b4cc7f841b9b7a7e650c9eab8151065",
+    "src/mer/models/classical.py": "42148868b3be088586fe82732a164cfda7bed38e77035052a1abc48d68d3da73",
+    "src/mer/models/fusion.py": "c689a0a92df765206e1350ab68b07ab077b70e6dda551bda2cd5a5f7b716f7dd",
+    "src/mer/models/speech.py": "ea4bb81291af5343baf43260028bbae078ce8ab01cc60280ef87eaf12d274b83",
+    "src/mer/models/text.py": "97618f4f1aa2fa0277ec2772b506adeec594e100870d9d3597b002741907b007",
+    "src/mer/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/mer/training/trainer.py": "b2cf83fa5b01f85bb19018da114bb1406af09590e3615d4da7488ea964ed46db",
+    "src/mer/training/runner.py": "4679465adbefc629a6558a6e87c70aaa9632573e67c1ad559d5eb5f64fae0317",
+    "src/mer/data/datasets.py": "e5ba456af6e3de76e50d4b5e48dafa8d89362e472bbd7edea5dfafaf90c373b0",
+    "configs/fusion_concat.yaml": "f2d79bd327423aa5bc77535498f3c443d03d8815bd0fd64251ee0569cc9d9a79",
+    "data/metadata.csv": "4f42821ed8247a9cdf98cfa4c7593df5c91ad95206769767de82566a9b5ed0b7",
+    "splits/protocol_C.json": "e1998a2cd6f399e8422e0daedc70aac7005759c7748b3fda38fba0d1ac600514"
+  },
+  "note": "run_test executed from these stable final checkpoint bytes; hashes checked before and after evaluation. Original training lineage cannot be recovered from invalidated P0 markers."
+}

@@ -1,0 +1,6 @@
+{
+  "source": "Results\\per_fold\\classical_text_protoB",
+  "fit_policy": "train plus validation; differs from neural train-only fitting",
+  "prediction_sha256": "c07e343f23d0d574f3e0ee6c180c49c4a780b9146a36234a727422fa5180a8e2",
+  "note": "Existing predictions independently validated; no historical fitted-estimator checkpoint exists."
+}

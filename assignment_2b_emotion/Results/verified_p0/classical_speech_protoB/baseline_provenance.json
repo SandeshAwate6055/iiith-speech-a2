@@ -1,0 +1,6 @@
+{
+  "source": "Results\\per_fold\\classical_speech_protoB",
+  "fit_policy": "train plus validation; differs from neural train-only fitting",
+  "prediction_sha256": "0da489524634be6cfdac09ead04cc1314ff3bde0ac8ff206fe0116dd1f6a7abd",
+  "note": "Existing predictions independently validated; no historical fitted-estimator checkpoint exists."
+}

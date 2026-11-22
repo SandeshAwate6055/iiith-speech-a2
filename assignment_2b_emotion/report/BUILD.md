@@ -5,7 +5,7 @@ From the repo root, use Python with `reportlab`, `pymupdf`, `numpy`, `PyYAML` in
 ```powershell
 python tools/build_reports.py --self-test
 python tools/build_reports.py
-python tools/build_reports.py --final --allow-provisional-2a --verification-root assignment_2b_emotion/Results/verification/headlines
+python tools/build_reports.py --final --allow-provisional-2a --verification-root assignment_2b_emotion/Results/verified_p0
 ```
 
 The default produces DRAFT PDF+MD in both component report directories. PyMuPDF renders every page into `report/qa/`; build manifests record source SHA256 hashes, pending requirements and PDF hashes. Reports are generated only from read-only evidence. No training or evaluation output is altered. The final gate runs before any report write. Without the provisional flag, missing Praat evidence blocks finalization; with it, 2A retains DRAFT labeling. There is no option to bypass missing 2B runs or the collision gate.
@@ -36,3 +36,6 @@ Each verification.json is written by the re-evaluation owner, not this report ge
 Include all five fold files for A/C and both for B. Paths are repository-root-relative. Hashes are checked against current bytes; this is an explicit owner attestation of re-evaluation correspondence, not proof of execution from hashes alone. Evidence must be within the repository workspace; audio/checkpoints remain ignored and private. Accuracy CSV uses numeric `accuracy_mean`, `accuracy_std`, `uar_mean`, `uar_std`, `macro_f1_mean`, `macro_f1_std`, exactly as the existing aggregate module emits. Failures match the existing failure_cases.csv schema, including fold/utt_id/y_true/y_pred and source run where present.
 
 All mandatory figures are listed in `PLOTS` in the generator. Missing/corrupt inputs stay pending. Re-run final build after inspection/evaluation is reconciled. Current PDF drafts are not submission-ready.
+
+
+Final recovery: both reports passed `--final --verification-root assignment_2b_emotion/Results/verified_p0` on22 November, with zero pending requirements. The former Praat interruption was resolved by scoped visual inspection and genuine captures. Historical collision records remain unchanged; final results use newly re-evaluated, hash-linked checkpoints. The final reports are3 pages (2A) and6 pages (2B). No automatic submission/public release is performed.

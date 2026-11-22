@@ -1,0 +1,10 @@
+{
+  "caveat": "Utterance-level exploratory exact McNemar; ignores word/speaker dependence and shared CV training. No population-level significance claim.",
+  "n_samples": 2800,
+  "acc_a": 0.99857,
+  "acc_b": 0.99821,
+  "a_wins_b_loses": 5,
+  "b_wins_a_loses": 4,
+  "p_value": 1.0,
+  "significant_0.05": false
+}

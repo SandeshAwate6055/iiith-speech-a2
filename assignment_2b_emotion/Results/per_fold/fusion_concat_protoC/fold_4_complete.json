@@ -1,0 +1,7 @@
+{
+  "fold": 4,
+  "seed": 46,
+  "best_epoch": 5,
+  "validation_macro_f1": 1.0,
+  "completed_epochs": 13
+}

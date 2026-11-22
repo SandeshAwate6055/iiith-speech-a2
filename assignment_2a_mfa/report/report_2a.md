@@ -1,6 +1,6 @@
 # Assignment 2A | Forced alignment
 
-**DRAFT - pending evidence remains.**
+**FINAL - required evidence gates passed.**
 
 ## Method and structural evidence
 
@@ -14,7 +14,7 @@ Lexicon: 145 corpus word types; 248 pronunciation rows; 11 base OOV types covere
 |---|---|---|---|---|
 | F2BJRLP1 | 25.309 | 68 | 308 | True / True |
 | F2BJRLP2 | 28.647 | 73 | 345 | True / True |
-| F2BJRLP3 | 30.707 | 82 | 373 | True / True |
+| F2BJRLP3 | 30.707 | 82 | 372 | True / True |
 | ISLE 01 | 4.125 | 5 | 13 | True / True |
 | ISLE 02 | 3.875 | 5 | 12 | True / True |
 | ISLE 03 | 4.5 | 5 | 13 | True / True |
@@ -29,26 +29,27 @@ Generated waveform/spectrogram/TextGrid plots below are distinct from Praat scre
 
 ![ISLE SESS0131 BLOCKD02 01 sprt1 full](../outputs/figures/ISLE_SESS0131_BLOCKD02_01_sprt1_full.png)
 
-## Human inspection and limitations
+## Praat inspection and limitations
 
-Human inspection: PENDING. Physical Escape stopped Praat automation. A4 Praat inspection, listening and skipped-phone diagnoses are not claimed. No gold boundary errors or timing accuracy are fabricated.
+Praat visual inspection: all six recordings were opened in the editor; scoped visual observations and genuine screenshots are recorded below. No listening-based gold labels are claimed.
 
-![Generated ISLE visualization, not a Praat observation.](../outputs/figures/ISLE_SESS0131_BLOCKD02_03_sprt1_full.png)
+Recorded observations (plain-text attribution):
+# Praat visual inspection, 22 November 2026
+
+All six primary sound/TextGrid pairs were opened in Praat 7.0.03. All three ISLE files were viewed over their full duration; each BU file was viewed in full and zoomed to approximately its first 5.5 seconds. This is a visual boundary inspection, not a listening-based phonetic transcription or a manually annotated gold set. No boundaries or labels were edited.
+
+- ISLE 01: the five words occupy the speech-bearing region; initial and long trailing silence have blank intervals. Word and phone boundaries broadly track visible vowel energy and consonantal transitions. The terminal stop interval extends beyond the strong vowel energy; weak release/noise makes the precise endpoint uncertain. Screenshot praat_isle01.jpg records the genuine editor view.
+- ISLE 02: new contains the dictionary variant N Y UW1; no has N OW1. The 350 ms OW1 interval at 1.870-2.220 s includes the falling final voiced region and weak tail. Its endpoint is a timing-review candidate, not a measured error against gold. Screenshot praat_isle02.jpg records this view.
+- ISLE 03: AE1 and EH1 are imposed canonical vowel labels in bad and bed. The visible vowel-bearing regions are separated, but forced labels alone cannot establish the speaker produced the intended vowel contrast. Long trailing silence is not assigned to a word.
+- BU 01-03: opening word order was checked in detailed waveform/spectrogram views (wanted chief justice; in nineteen seventy six; the author of more than eight hundred). Reduced function words and consonants are densely spaced. The displayed words Dukakis, Hennessy and SJC retain explicit pronunciation-based phone intervals. Full-duration BU views suppress spectrograms beyond Praat's default analysis window, so detailed review used zoomed views.
+
+No skipped words or spn were found in the primary exported sequence. Very short BU phones (29/28/27 at <=31 ms) are duration flags rather than proof of missing phones. No gold boundary MAE is claimed. Separately, the optional English-MFA comparison has a confirmed transcript mismatch in F2BJRLP2 and nine spn intervals across the corpus; these are model/dictionary limitations, not crash corruption. Quantitative agreement is not a substitute for reference boundary accuracy.
+
+Evidence: outputs/praat_screenshots/praat_isle01.jpg and praat_isle02.jpg. These are actual Praat captures, not generated alignment plots. Original primary TextGrids are preserved unchanged.
+
+![Actual Praat editor screenshots (ISLE 01 and 02); original captures retained.](figures/panel_3_2.png)
 
 Duration flags: 84 intervals at 30 ms; 1 above 300 ms. These are review candidates, not confirmed errors. Inspect proper names, initialisms, long pauses and L2 minimal pairs. Without independently reviewed gold, no boundary MAE is reported.
-
-Attributed plot-only observations: # Plot-based alignment observations
-
-These observations are from generated waveform/spectrogram figures and machine-readable intervals, not a completed Praat session or listening-based reference. Praat automation was stopped with Escape before inspection. No gold boundaries or boundary-error scores are claimed.
-
-- All six files retain exact transcript word order and full-duration tiers. Blank intervals represent pauses, including the long trailing silence in the first ISLE recording.
-- The inspected first ISLE plot places `i said white` before the short medial pause, then `not bait`; the vowel-bearing regions coincide broadly with visible harmonic energy. Forced labels do not prove that the L2 realization matches the canonical vowel.
-- The first BU excerpt is densely segmented. Word boundaries broadly follow visible speech groups, but coarticulated function words and the SJC initialism need focused zoom/listening before timing errors can be asserted.
-
-## Objective review candidates (not confirmed errors)
-- ISLE_SESS0131_BLOCKD02_02_sprt1: `OW1` from 1.870 to 2.220 s (350 ms). Inspect whether this is sustained speech or an over-extended boundary.
-
-The three BU recordings contain 29, 28 and 27 phones of at most31 ms, respectively. Short durations can be legitimate reductions; they are review candidates, not evidence of skipped phones. No `spn` was exported.
 
 Reproduce using assignment_2a_mfa/README.md and scripts/prepare_models.py, prepare_lexicon.py, run_alignment.py, then evaluate_alignments.py and visualize.py. Regenerate with python tools/build_reports.py. Six source figures: F2BJRLP1_excerpt.png, F2BJRLP2_excerpt.png, F2BJRLP3_excerpt.png, ISLE_SESS0131_BLOCKD02_01_sprt1_full.png, ISLE_SESS0131_BLOCKD02_02_sprt1_full.png, ISLE_SESS0131_BLOCKD02_03_sprt1_full.png.
 
@@ -56,5 +57,5 @@ Reproduce using assignment_2a_mfa/README.md and scripts/prepare_models.py, prepa
 
 ## Pending evidence
 
-- 2A Praat screenshot/observations pending: user stopped UI; plots are not Praat inspection
+No pending requirements recorded.
 

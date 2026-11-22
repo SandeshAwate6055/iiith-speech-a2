@@ -28,3 +28,7 @@ __pycache__/
 .env
 kaggle.json
 *.log
+
+# Rejected local QA captures
+*.invalid
+*.partial

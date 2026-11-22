@@ -34,7 +34,7 @@ mfa validate corpus dictionaries/custom_lexicon.dict english_us_arpa
 mfa align corpus dictionaries/custom_lexicon.dict english_us_arpa outputs/textgrids/english_us_arpa --beam 100 --retry_beam 400
 ```
 
-Stop on errors or missing/OOV inputs. Review/add pronunciations (optionally via `build_dictionary.py --g2p <generated.dict>`) before repeating validation. Claim zero OOV only after full coverage and MFA validation. Use a fresh output directory for reruns, and never clean another process's work directory. Alternative acoustic models require matching phone inventories and separate outputs; comparisons/adaptation remain pending verification.
+Stop on errors or missing/OOV inputs. Review/add pronunciations (optionally via `build_dictionary.py --g2p <generated.dict>`) before repeating validation. Claim zero OOV only after full coverage and MFA validation. Use a fresh output directory for reruns, and never clean another process's work directory. Alternative acoustic models require matching phone inventories and separate outputs; comparison outputs are retained separately; optional English-MFA mismatch/spn limitations are disclosed in the final report.
 
 ## Inspection and evidence
 
@@ -43,7 +43,7 @@ python scripts/evaluate_alignments.py --corpus corpus --tg_root outputs/textgrid
 python scripts/visualize.py --corpus corpus --tg_dir outputs/textgrids/english_us_arpa --out outputs/figures
 ```
 
-Open each corresponding audio and TextGrid in Praat, select both and choose View & Edit. Inspect words/phones against sound and spectrograms, especially proper nouns, initialisms, pauses and ISLE minimal pairs. Record skipped phones and timing offsets. Automatic validity/duration checks and cross-model agreement are proxies, not gold boundary accuracy. Verify all six output files; an empty folder does not establish success. Final alignment, Praat observations and report remain pending verification.
+Open each corresponding audio and TextGrid in Praat, select both and choose View & Edit. Inspect words/phones against sound and spectrograms, especially proper nouns, initialisms, pauses and ISLE minimal pairs. Record skipped phones and timing offsets. Automatic validity/duration checks and cross-model agreement are proxies, not gold boundary accuracy. Verify all six output files; an empty folder does not establish success. Primary alignment, scoped Praat observations and final report are complete; see the final recovery section below.
 
 Optional word-level CTC baseline in the torch/torchaudio 2.5.1 environment: `python scripts/ctc_baseline_align.py --corpus corpus --out outputs/textgrids/ctc`. This downloads pretrained weights, does not replace MFA phone alignment and must keep caches private. Review derived artifacts for licensing/privacy before separately authorized sharing.
 
@@ -60,3 +60,8 @@ python scripts/run_alignment.py --mfa-env "$env:USERPROFILE/micromamba/root/envs
 ```
 
 Provide `--raw <supplied-pairs-directory>` only if the six-pair corpus has not been prepared. Completed TextGrids are reused only when recorded input hashes still match. This command does not claim to automate the currently interrupted Praat inspection.
+
+
+## Completed inspection and final report
+
+All six primary pairs were opened in Praat 7.0.03 on22 November. Full ISLE views and zoomed BU excerpts were visually inspected, with genuine screenshots in `outputs/praat_screenshots/` and scoped notes in `outputs/evaluation/praat_observations.md`. No boundaries were edited and no listening-based phonetic gold set is claimed. The final report is `report/report_2a.pdf`. Optional English-MFA mismatch/spn issues are disclosed; the six primary ARPA outputs pass strict sequence/coverage checks.

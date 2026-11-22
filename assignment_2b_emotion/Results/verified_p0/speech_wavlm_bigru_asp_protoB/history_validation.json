@@ -1,0 +1,8 @@
+{
+  "source": "Results\\per_fold\\speech_wavlm_bigru_asp_protoB\\train_history.json",
+  "selected_epochs_match": [
+    "fold_0",
+    "fold_1"
+  ],
+  "note": "Legacy curves checked against selected checkpoint epoch/F1; complete training lineage is not reconstructed."
+}

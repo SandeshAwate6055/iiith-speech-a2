@@ -1,0 +1,630 @@
+{
+ "model": "fusion_gated_xattn",
+ "modality": "fusion",
+ "protocol": "C",
+ "accuracy_mean": 0.9982,
+ "accuracy_std": 0.0028,
+ "uar_mean": 0.9982,
+ "uar_std": 0.0028,
+ "macro_f1_mean": 0.9982,
+ "macro_f1_std": 0.0028,
+ "folds": [
+  {
+   "accuracy": 1.0,
+   "uar": 1.0,
+   "macro_precision": 1.0,
+   "macro_recall": 1.0,
+   "macro_f1": 1.0,
+   "per_class": {
+    "angry": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "disgust": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "fear": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "happy": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "neutral": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "surprise": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    }
+   },
+   "confusion_matrix": [
+    [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     80,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     80,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     80,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     80,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     80
+    ]
+   ],
+   "loss": 0.06734,
+   "gate_mean": 0.5065,
+   "gate_std": 0.0431,
+   "fold": 0
+  },
+  {
+   "accuracy": 1.0,
+   "uar": 1.0,
+   "macro_precision": 1.0,
+   "macro_recall": 1.0,
+   "macro_f1": 1.0,
+   "per_class": {
+    "angry": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "disgust": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "fear": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "happy": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "neutral": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "surprise": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    }
+   },
+   "confusion_matrix": [
+    [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     80,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     80,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     80,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     80,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     80
+    ]
+   ],
+   "loss": 0.06882,
+   "gate_mean": 0.5012,
+   "gate_std": 0.0397,
+   "fold": 1
+  },
+  {
+   "accuracy": 0.99821,
+   "uar": 0.99821,
+   "macro_precision": 0.99824,
+   "macro_recall": 0.99821,
+   "macro_f1": 0.99821,
+   "per_class": {
+    "angry": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "disgust": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "fear": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "happy": {
+     "precision": 0.9877,
+     "recall": 1.0,
+     "f1": 0.9938,
+     "support": 80
+    },
+    "neutral": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "surprise": {
+     "precision": 1.0,
+     "recall": 0.9875,
+     "f1": 0.9937,
+     "support": 80
+    }
+   },
+   "confusion_matrix": [
+    [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     80,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     80,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     80,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     80,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     79
+    ]
+   ],
+   "loss": 0.08959,
+   "gate_mean": 0.5052,
+   "gate_std": 0.0398,
+   "fold": 2
+  },
+  {
+   "accuracy": 1.0,
+   "uar": 1.0,
+   "macro_precision": 1.0,
+   "macro_recall": 1.0,
+   "macro_f1": 1.0,
+   "per_class": {
+    "angry": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "disgust": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "fear": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "happy": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "neutral": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "surprise": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    }
+   },
+   "confusion_matrix": [
+    [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     80,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     80,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     80,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     80,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     80
+    ]
+   ],
+   "loss": 0.07944,
+   "gate_mean": 0.5264,
+   "gate_std": 0.0353,
+   "fold": 3
+  },
+  {
+   "accuracy": 0.99286,
+   "uar": 0.99286,
+   "macro_precision": 0.99295,
+   "macro_recall": 0.99286,
+   "macro_f1": 0.99283,
+   "per_class": {
+    "angry": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "disgust": {
+     "precision": 0.9877,
+     "recall": 1.0,
+     "f1": 0.9938,
+     "support": 80
+    },
+    "fear": {
+     "precision": 0.9877,
+     "recall": 1.0,
+     "f1": 0.9938,
+     "support": 80
+    },
+    "happy": {
+     "precision": 0.9753,
+     "recall": 0.9875,
+     "f1": 0.9814,
+     "support": 80
+    },
+    "neutral": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "sad": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 80
+    },
+    "surprise": {
+     "precision": 1.0,
+     "recall": 0.9625,
+     "f1": 0.9809,
+     "support": 80
+    }
+   },
+   "confusion_matrix": [
+    [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     80,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     80,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     79,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     80,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     2,
+     0,
+     0,
+     77
+    ]
+   ],
+   "loss": 0.0858,
+   "gate_mean": 0.5027,
+   "gate_std": 0.0446,
+   "fold": 4
+  }
+ ],
+ "gate_mean": 0.5084,
+ "gate_std": 0.0405,
+ "layer_weights_mean": [
+  0.0874,
+  0.0834,
+  0.0832,
+  0.0845,
+  0.0825,
+  0.079,
+  0.0752,
+  0.0754,
+  0.0716,
+  0.0703,
+  0.0687,
+  0.0696,
+  0.0692
+ ]
+}

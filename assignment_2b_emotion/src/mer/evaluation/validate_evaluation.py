@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import numpy as np
 import pandas as pd
+from sklearn.metrics import accuracy_score, f1_score, recall_score
 from mer.evaluation.metrics import compute_metrics
 from mer.utils.common import EMOTIONS
 
@@ -70,7 +71,11 @@ def validate_run(run_dir, meta_path="data/metadata.csv", splits_dir="splits"):
         sub = df[df.fold == f["fold"]]
         require(set(sub.utt_id) == sets[2], f"Test ID mismatch fold {f['fold']}")
         order.extend((f["fold"], uid) for uid in f["test"])
-        metrics.append(dict(fold=f["fold"], **compute_metrics(sub.y_true.to_numpy(), sub.y_pred.to_numpy())))
+        measured = compute_metrics(sub.y_true.to_numpy(), sub.y_pred.to_numpy())
+        measured.update(accuracy=float(accuracy_score(sub.y_true, sub.y_pred)),
+                        macro_f1=float(f1_score(sub.y_true, sub.y_pred, labels=range(7), average="macro", zero_division=0)),
+                        uar=float(recall_score(sub.y_true, sub.y_pred, labels=range(7), average="macro", zero_division=0)))
+        metrics.append(dict(fold=f["fold"], **measured))
     report = dict(summary, folds=metrics, n_folds=len(metrics))
     for metric in ["accuracy", "uar", "macro_f1"]:
         values = [m[metric] for m in metrics]

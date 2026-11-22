@@ -1,0 +1,19 @@
+{
+  "status": "FINAL_CHECKPOINT_INFERENCE_RECONCILED",
+  "headline_runs": [
+    "speech_wavlm_bigru_asp_protoA",
+    "speech_wavlm_bigru_asp_protoB",
+    "speech_wavlm_bigru_asp_protoC",
+    "text_roberta_top2ft_protoA",
+    "text_roberta_top2ft_protoB",
+    "text_roberta_top2ft_protoC",
+    "fusion_concat_protoA",
+    "fusion_concat_protoB",
+    "fusion_concat_protoC",
+    "fusion_gated_xattn_protoA",
+    "fusion_gated_xattn_protoB",
+    "fusion_gated_xattn_protoC"
+  ],
+  "incident_sha256": "e57e87a6165f8047c4a24b3330b67a420b1987888a328c33a53bf49dc4b831eb",
+  "note": "Historical incident is retained unchanged; invalidated legacy P0 completion markers remain unusable."
+}

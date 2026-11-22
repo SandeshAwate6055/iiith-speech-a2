@@ -1,4 +1,4 @@
-﻿"""Re-evaluate final checkpoints into distinct outputs after concurrent writers stop.
+"""Re-evaluate final checkpoints into distinct outputs after concurrent writers stop.
 Does not train, alter legacy run files, or adopt invalidated P0 markers.
 """
 import argparse
@@ -22,7 +22,7 @@ def sha(path):
 
 def require_idle(queue_pid):
     if os.name!='nt':raise RuntimeError('This ownership guard is Windows-specific; do not bypass on another host')
-    command=f"$q=Get-Process -Id {queue_pid} -ErrorAction SilentlyContinue; $p=Get-CimInstance Win32_Process | Where-Object {{ $_.Name -eq 'python.exe' -and $_.CommandLine -match '(models[/\\\\](speech|text|fusion)_pipeline[/\\\\](train|test).py|mer.training.p0_train)' }}; if($q -or $p){{exit 17}}"
+    command=f"$q=Get-CimInstance Win32_Process -Filter 'ProcessId={queue_pid}'; if($q.CommandLine -notmatch 'models/(text|fusion)_pipeline|continue_p0.ps1'){{$q=$null}}; $p=Get-CimInstance Win32_Process | Where-Object {{ $_.Name -eq 'python.exe' -and $_.CommandLine -match '(models[/\\\\](speech|text|fusion)_pipeline[/\\\\](train|test).py|mer.training.p0_train)' }}; if($q -or $p){{exit 17}}"
     result=subprocess.run(['powershell.exe','-NoProfile','-Command',command],capture_output=True,text=True)
     if result.returncode:raise RuntimeError('Legacy queue/training still active, or ownership check failed; no evaluation started')
 

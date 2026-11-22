@@ -54,7 +54,7 @@ python models/fusion_pipeline/test.py --config configs/fusion.yaml --protocol A
 
 Legacy training overwrites existing fold checkpoints. Use unique `--name` values matched between train/test, or copied configs with external private `ckpt_dir`/`out_dir`; preserve active/original runs. Legacy test requires every protocol fold checkpoint. Default run name: `<config name>_proto<protocol>`. Test writes `summary.json`, `predictions.csv`, `embeddings.npy` under `Results/per_fold/<run>`; training saves best checkpoints and validation history. Embeddings represent the temporal/contextual/fusion block. JSON metrics are fractions; tables show percentages and population standard deviation across folds.
 
-Classical commands: `python -m mer.models.classical --modality speech --protocol A` and similarly `--modality text`. These overwrite default outputs; preserve originals. After completed tests: `python -m mer.evaluation.aggregate_results` and `python -m mer.evaluation.plots`. Failure-case plots need local audio. Current neural text/fusion completion, final aggregate comparison and reports are **pending verification**. Missing results are not zero scores.
+Classical commands: `python -m mer.models.classical --modality speech --protocol A` and similarly `--modality text`. These overwrite default outputs; preserve originals. After completed tests: `python -m mer.evaluation.aggregate_results` and `python -m mer.evaluation.plots`. Failure-case plots need local audio. The final checkpoint-linked neural results, aggregate comparison and reports are complete; use the verified final recovery workflow below. Optional interrupted runs are excluded, not assigned zero scores.
 
 ## Audit interpretation
 
@@ -67,3 +67,27 @@ Every full-corpus transcript occurs with seven emotions, so text has no intrinsi
 ## Private Colab
 
 Open [notebooks/P0_colab.ipynb](notebooks/P0_colab.ipynb), select a GPU, provide a private-repo read token through hidden input and configure private Drive paths. No embedded secrets, public repository or raw/2A audio is needed. Use a revision containing the final P0 runner and canonical configs. Jobs are text, concat fusion and gated fusion across A/B/C. Outputs go to Drive outside Git, with provenance and input/config fingerprints. Completed jobs are skipped; interrupted jobs rely on the P0 runner's resume contract. Do not use two sessions for the same RUN_ID. Clear outputs before sharing. Live Colab execution remains unvalidated.
+
+
+## Verified final recovery (22 November)
+
+The canonical submission artifacts are `Results/accuracy_tables.{csv,md}`, `Results/plots/`, `Results/failure_cases.md`, `Results/comparative_analysis.md`, and `report/report_2b.pdf`. They are generated from the separate `Results/verified_p0/` outputs. Original `Results/per_fold/` files and all checkpoints are preserved. Verification JSON files bind final checkpoint bytes to re-evaluated predictions; historical text-training provenance was not reconstructed.
+
+From the repository root, use `python tools/complete_model_verification.py` to verify existing weights and `python tools/finalize_evaluation.py` to rebuild tables/figures. Build the report with a Python containing the report dependencies:
+
+```powershell
+python tools/build_reports.py --final --verification-root assignment_2b_emotion/Results/verified_p0
+```
+
+All 12 speech/text/concat/gated headline combinations across A/B/C are available. Interrupted late fusion is optional and excluded. Gated C lacks historical epoch curves; final checkpoint inference is verified and no curve was invented. Per-class confusion/recall, five actual failures, paired help/harm counts and fold-0 t-SNE/UMAP for temporal/contextual/fused blocks are included. Do not interpret projected separation as independent predictive evidence.
+
+The component requirements now match the actual installed versions; `environment_versions.json` and `requirements-lock-windows.txt` record the evaluated Windows environment. The latter is platform-specific, not a Colab lockfile. No dependencies were upgraded during recovery.
+
+For a fresh training reproduction, prepare data/features first, then use a NEW experiment name to avoid the intentionally blocked historical text markers, for example:
+
+```powershell
+python models/text_pipeline/train.py --config configs/text.yaml --protocol A --name reproduce_text_A
+python models/text_pipeline/test.py --config configs/text.yaml --protocol A --name reproduce_text_A
+```
+
+Use the analogous speech/fusion entry points and frozen split manifests. These commands were not rerun during recovery: the existing completed models were reused. Full training reproduction requires the documented datasets/features and suitable compute; checkpoint inference was reproduced locally.

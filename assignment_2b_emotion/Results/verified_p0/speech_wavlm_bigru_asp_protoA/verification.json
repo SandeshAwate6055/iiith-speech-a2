@@ -1,0 +1,35 @@
+{
+  "queue_ownership_cleared": true,
+  "reconciled_after_collision": true,
+  "incident_sha256": "e57e87a6165f8047c4a24b3330b67a420b1987888a328c33a53bf49dc4b831eb",
+  "prediction_sha256": "f5b76399d704bb8ef548eac8fc2572619dab5528cab53fa8eddf6b1d9a725384",
+  "summary_sha256": "cb5a1fadf41c44b128fdb5b5a93086d54a567499a8c1060e88494e08d1f47171",
+  "embeddings_sha256": "35a43ecca2efdc1d0bca2b26b465528b394e59f7d110c93fd3737a90f5a915a0",
+  "checkpoint_sha256": {
+    "assignment_2b_emotion/checkpoints/speech_wavlm_bigru_asp_protoA/fold_0.pt": "dcfb5a4eea6f34301d142d41a4621386bb46530851ed919e8dc9e6b384a7dd3a",
+    "assignment_2b_emotion/checkpoints/speech_wavlm_bigru_asp_protoA/fold_1.pt": "86d9b903bae20e0b33b4bde0292f7875baad2a6d66e456859f41181c5d49cd89",
+    "assignment_2b_emotion/checkpoints/speech_wavlm_bigru_asp_protoA/fold_2.pt": "7f1d3a06de1ead6a4742cc09836d0278db349abf9edab8db2e5ff0297234cbc4",
+    "assignment_2b_emotion/checkpoints/speech_wavlm_bigru_asp_protoA/fold_3.pt": "3184b6bebc490f72915fca25fd7006b0a201fb53b3f152df6e2a986769caba13",
+    "assignment_2b_emotion/checkpoints/speech_wavlm_bigru_asp_protoA/fold_4.pt": "14073de125748f0fb53a56efe97dcbd0f632e49cfbe276a32aba5dbf8e98a98a"
+  },
+  "input_sha256": {
+    "checkpoints/speech_wavlm_bigru_asp_protoA/fold_0.pt": "dcfb5a4eea6f34301d142d41a4621386bb46530851ed919e8dc9e6b384a7dd3a",
+    "checkpoints/speech_wavlm_bigru_asp_protoA/fold_1.pt": "86d9b903bae20e0b33b4bde0292f7875baad2a6d66e456859f41181c5d49cd89",
+    "checkpoints/speech_wavlm_bigru_asp_protoA/fold_2.pt": "7f1d3a06de1ead6a4742cc09836d0278db349abf9edab8db2e5ff0297234cbc4",
+    "checkpoints/speech_wavlm_bigru_asp_protoA/fold_3.pt": "3184b6bebc490f72915fca25fd7006b0a201fb53b3f152df6e2a986769caba13",
+    "checkpoints/speech_wavlm_bigru_asp_protoA/fold_4.pt": "14073de125748f0fb53a56efe97dcbd0f632e49cfbe276a32aba5dbf8e98a98a",
+    "src/mer/models/blocks.py": "28d0743e55729022285a8a0e612fbdd24b4cc7f841b9b7a7e650c9eab8151065",
+    "src/mer/models/classical.py": "42148868b3be088586fe82732a164cfda7bed38e77035052a1abc48d68d3da73",
+    "src/mer/models/fusion.py": "c689a0a92df765206e1350ab68b07ab077b70e6dda551bda2cd5a5f7b716f7dd",
+    "src/mer/models/speech.py": "ea4bb81291af5343baf43260028bbae078ce8ab01cc60280ef87eaf12d274b83",
+    "src/mer/models/text.py": "97618f4f1aa2fa0277ec2772b506adeec594e100870d9d3597b002741907b007",
+    "src/mer/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/mer/training/trainer.py": "b2cf83fa5b01f85bb19018da114bb1406af09590e3615d4da7488ea964ed46db",
+    "src/mer/training/runner.py": "4679465adbefc629a6558a6e87c70aaa9632573e67c1ad559d5eb5f64fae0317",
+    "src/mer/data/datasets.py": "e5ba456af6e3de76e50d4b5e48dafa8d89362e472bbd7edea5dfafaf90c373b0",
+    "configs/speech.yaml": "69e966e9f12713e4ad7d3719016a922a6d7bda584958eaff89afa125f1b91073",
+    "data/metadata.csv": "4f42821ed8247a9cdf98cfa4c7593df5c91ad95206769767de82566a9b5ed0b7",
+    "splits/protocol_A.json": "b7670103cc1d18a0ff59661340987b94d99fadcafe25b99a0bb9f5eaad2f0285"
+  },
+  "note": "run_test executed from these stable final checkpoint bytes; hashes checked before and after evaluation. Original training lineage cannot be recovered from invalidated P0 markers."
+}

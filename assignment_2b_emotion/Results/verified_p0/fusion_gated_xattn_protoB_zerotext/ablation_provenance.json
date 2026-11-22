@@ -1,0 +1,8 @@
+{
+  "parent": "fusion_gated_xattn_protoB",
+  "checkpoint_sha256": {
+    "checkpoints\\fusion_gated_xattn_protoB\\fold_0.pt": "75d518f72e3171c9a0c000edbc1d4308178c71a01279d7e5c590f438d85efb50",
+    "checkpoints\\fusion_gated_xattn_protoB\\fold_1.pt": "5948fc012b58ebaf1c662bb6fe3614e86147f71503ad58047b7254dda9fd729f"
+  },
+  "intervention": "zero text representations at intermediate fusion projections; not a separately trained speech system"
+}

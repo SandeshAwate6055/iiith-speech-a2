@@ -1,0 +1,6 @@
+fold,utt_id,speaker,word,y_true,y_pred,true_label,pred_label,confidence,prob_angry,prob_disgust,prob_fear,prob_happy,prob_neutral,prob_sad,prob_surprise,source
+0,OAF_make_surprise,OAF,make,6,3,surprise,happy,0.5678548,0.019083029,0.11666963,0.016964512,0.5678548,0.03879425,0.023621997,0.2170118,Protocol A (speech_wavlm_bigru_asp_protoA)
+0,YAF_fall_angry,YAF,fall,0,2,angry,fear,0.82493174,0.02210208,0.029524563,0.82493174,0.02100773,0.00901328,0.05675745,0.036663264,Protocol B LOSO (speech_wavlm_bigru_asp_protoB)
+1,OAF_cool_happy,OAF,cool,3,6,happy,surprise,0.7629191,0.03809495,0.05214595,0.04517265,0.036244117,0.034618165,0.030805076,0.7629191,Protocol B LOSO (speech_wavlm_bigru_asp_protoB)
+1,OAF_cool_neutral,OAF,cool,4,0,neutral,angry,0.7470457,0.7470457,0.0350081,0.039178506,0.015204555,0.11551808,0.027424555,0.020620435,Protocol B LOSO (speech_wavlm_bigru_asp_protoB)
+0,YAF_week_happy,YAF,week,3,0,happy,angry,0.7097167,0.7097167,0.051928908,0.103348635,0.021348035,0.025007177,0.015988939,0.07266161,Protocol B LOSO (speech_wavlm_bigru_asp_protoB)

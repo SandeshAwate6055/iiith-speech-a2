@@ -5,7 +5,7 @@ Plan: [PLAN.md](PLAN.md) (approved 20 Nov 11:09). Deadline: 22 Nov 23:59 IST (ta
 - TESS source: Borealis Dataverse doi:10.5683/SP2/E8H2MF (2800 files, same as Kaggle; license CC BY-NC 4.0).
 - Never commit: raw/licensed audio, datasets, features, checkpoints, credentials (see .gitignore).
 - GitHub repo stays PRIVATE until the user approves making it public.
-- Envs: MFA → Miniforge `mfa` conda env (`%USERPROFILE%\miniforge3`). ML → `.venv` (uv, Py3.10, torch 2.5.1+cu121).
+- Envs (historical setup plan; final MFA uses micromamba): MFA → Miniforge `mfa` conda env (`%USERPROFILE%\miniforge3`). ML → `.venv` (uv, Py3.10, torch 2.5.1+cu121).
 - Praat: `%USERPROFILE%\tools\praat\Praat.exe`.
 - The 2A BU files are NIST SPHERE named .wav → convert to RIFF before MFA.
 
@@ -18,13 +18,20 @@ Plan: [PLAN.md](PLAN.md) (approved 20 Nov 11:09). Deadline: 22 Nov 23:59 IST (ta
   - `S*`: Proto A = **99.96% ± 0.07%** F1 · Proto B (LOSO) = **56.23% ± 7.53%** F1 (60.71% UAR) · Proto C = **99.86% ± 0.13%** F1
   - `eGeMAPS+SVM`: Proto A = 98.43% F1 · Proto B = 12.45% F1 (18.04% UAR) · Proto C = 98.55% F1
 
-## Pending
-- [ ] Phase 0 (tail): MFA model downloads (3/5 done, running)
-- [ ] Phase B4+B5: Text `T*` + Fusion `F3/F1/F2` (running, with RAM fp16 cache)
-- [ ] A2–A5 (2A) · B6–B8 (2B) · F
+## Current completion status (22 November, final recovery)
+- [x] A2: custom lexicon, G2P, zero OOV and acoustic inventory validation.
+- [x] A3: six primary TextGrids and strict structural/transcript checks.
+- [x] A4: six-pair Praat visual inspection (full ISLE/zoomed BU), two genuine screenshots, scoped observations and alignment/error analysis. No manual gold/listening-based accuracy claimed.
+- [x] B3-B5: all12 speech/text/concat/gated A/B/C headline runs completed and independently re-evaluated; only missing concat-C was trained after the crash.
+- [x] B6: accuracy/UAR/F1 tables, all confusion matrices, within-fold temporal/contextual/fusion t-SNE and UMAP, per-emotion analysis, paired help/harm and five actual failures.
+- [x] A5/B8: final PDFs,3 pages and6 pages; strict build manifests have no pending requirements and rendered pages were reviewed.
+- [x] Final tests:19 passed; actual dependency versions and environment lock recorded. No completed models retrained.
+- [ ] Owner approval and actual submission. Repository must remain PRIVATE. No email or public release has been performed.
 
-## Blockers
-- none
+## Remaining limitations (not missing P0 implementation)
+- Historical text-training lineage was affected by concurrent writers. Final checkpoint-to-prediction mapping is re-evaluated and hash-linked; invalidated original P0 markers are not adopted.
+- Gated C historical epoch curves are unavailable; final checkpoints/test inference are verified. Optional late fusion remains interrupted/excluded.
+- Only two speakers; no population-level SER claim. No gold boundary MAE. Optional English-MFA outputs contain disclosed mismatch/spn issues.
 
 ## Recovery audit milestone (20 Nov 2026)
 - Existing speech training is active (parent PowerShell PID 2736, Python 5660/19880); A/B/C are already queued. Protocol A fold_0 through fold_3 checkpoints observed. Do not duplicate training or edit its shared model/trainer files while the previous agent owns them.
@@ -64,3 +71,22 @@ Plan: [PLAN.md](PLAN.md) (approved 20 Nov 11:09). Deadline: 22 Nov 23:59 IST (ta
 - Genuine blockers requiring coordination: user must stop the OTHER agent from scheduling new work (leave its existing queue10420 running), then confirm sole scheduling ownership. Async coordination request sent. The previous queue is preserved; our duplicate queue is stopped. Text P0 markers remain invalidated in the recorded incident.
 - Praat UI was stopped by physical Escape. No further computer-use calls were made. Resume/permission to interact with Praat is needed in a later turn for actual inspection/screenshots; plotted observations alone do not fulfill that requirement.
 - No credentials/raw audio/features/checkpoints were committed or uploaded. Repository visibility unchanged. No P1 work started while P0 remains incomplete.
+
+
+## Final recovery (22 Nov ~12:55 IST)
+- Sole-agent scheduling confirmed; no prior project jobs running. All47 checkpoint files loaded with finite tensors during read-only crash audit; existing results preserved.
+- Reviewed225 permitted source/derived files committed and pushed to confirmed PRIVATE repository, backup commit c102351. Raw data, environments, model weights, caches and unrelated Compitator_ASS_2 excluded.
+- Starting only missing concat-C baseline, followed sequentially by checkpoint-linked re-evaluation of12 headline runs into Results/verified_p0. No completed models will be retrained. Legacy PID guard now verifies process identity to avoid false blocking from reboot PID reuse.
+
+- A4 visual inspection completed in Praat: all6 primary pairs opened; full ISLE and zoomed BU excerpts checked. Two actual editor screenshots and scoped observations saved. No invented listening-based judgments/gold boundaries, no alignment edits.
+- Missing concat-C completed:99.71%accuracy,99.72%macro-F1; saved checkpoint re-evaluation now running into separate verified outputs.
+
+- All12 headline checkpoint re-evaluations complete with exact before/after hashes and explicit embedding IDs; historical text-training collision is retained as a limitation, while final checkpoint-to-prediction correspondence is reconciled. Original per_fold outputs preserved.
+- Reproducibility QA found provisional dependency pins differed from actual packages. Corrected component requirements to the installed environment (no upgrades); saved environment_versions.json and Windows lockfile.
+
+
+## Final QA milestone (22 Nov)
+- All12 headline verification records plus original results retained. Report2A and report2B both FINAL with0 pending evidence gates; all rendered pages reviewed, including corrected genuine Praat capture and detailed speaker-transfer/gate/zero-text discussion.
+-20 completed evaluation rows include6 classical,12 neural headline and2 zero-text checks. Matched data-fit caveats and historical provenance limitations are explicit.52 local checkpoint files retained (48 headline plus4 unfinished late-fusion checkpoints).
+- Required code layout, README commands and package versions checked. Final repository preservation includes the legitimate src/mer/data Python package; only actual dataset directories are excluded.
+- Preparing a local submission package for owner review only. Private GitHub backup/final push is authorized; actual submission and any visibility change are not.

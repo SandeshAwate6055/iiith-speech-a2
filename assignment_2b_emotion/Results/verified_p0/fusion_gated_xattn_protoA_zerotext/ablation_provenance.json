@@ -1,0 +1,11 @@
+{
+  "parent": "fusion_gated_xattn_protoA",
+  "checkpoint_sha256": {
+    "checkpoints\\fusion_gated_xattn_protoA\\fold_0.pt": "18fb086eed2cc87935ed0e2f0197526a02e4d396b3ad7589fa07545e2317df97",
+    "checkpoints\\fusion_gated_xattn_protoA\\fold_1.pt": "71e75447479c83e1354e58f8753a2cb010be0e741190f84021e35b5f09733b11",
+    "checkpoints\\fusion_gated_xattn_protoA\\fold_2.pt": "123e16b871ca8518ff61b3d05ead015bb2209bc208573796a1ef18d467ebb380",
+    "checkpoints\\fusion_gated_xattn_protoA\\fold_3.pt": "f2ec99ff92a6f66068f17b8f06aba6a5ee5505cb5d9874f2b90dc980a5e702fc",
+    "checkpoints\\fusion_gated_xattn_protoA\\fold_4.pt": "e5fd9ea2c1b9a6d665fac8eeee28d529b9069eb8c54d8debb99e20c3ac24e358"
+  },
+  "intervention": "zero text representations at intermediate fusion projections; not a separately trained speech system"
+}
